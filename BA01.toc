@@ -1,0 +1,38 @@
+\babel@toc {ngerman}{}\relax 
+\contentsline {chapter}{\numberline {1}Einleitung}{1}{}%
+\contentsline {section}{\numberline {1.1}Motivation und Problemstellung}{1}{}%
+\contentsline {section}{\numberline {1.2}Stand der Technik und Forschungslücke}{2}{}%
+\contentsline {section}{\numberline {1.3}Zielsetzung und Forschungsfragen}{3}{}%
+\contentsline {section}{\numberline {1.4}Aufbau der Arbeit}{4}{}%
+\contentsline {chapter}{\numberline {2}Theoretische Grundlagen}{5}{}%
+\contentsline {section}{\numberline {2.1}Bedrohungslage}{5}{}%
+\contentsline {subsection}{\numberline {2.1.1}Denial-of-Service-Angriff}{5}{}%
+\contentsline {subsection}{\numberline {2.1.2}Malware}{7}{}%
+\contentsline {subsection}{\numberline {2.1.3}Exploits}{8}{}%
+\contentsline {section}{\numberline {2.2}IDS / IPS Grundlagen}{10}{}%
+\contentsline {subsection}{\numberline {2.2.1}Vom passiven Detektieren zum aktiven Verhindern}{10}{}%
+\contentsline {subsection}{\numberline {2.2.2}Funktionsprinzip: Deep Packet Inspection (DPI)}{12}{}%
+\contentsline {subsection}{\numberline {2.2.3}Zentrale Erkennungsmethoden}{12}{}%
+\contentsline {section}{\numberline {2.3}Vorstellung der Systeme}{12}{}%
+\contentsline {subsection}{\numberline {2.3.1}Der kommerzielle Vertreter: FortiGate}{12}{}%
+\contentsline {subsection}{\numberline {2.3.2}Die Open-Source-Alternative: OPNsense}{12}{}%
+\contentsline {subsection}{\numberline {2.3.3}Synoptische Gegenüberstellung}{12}{}%
+\contentsline {chapter}{\numberline {3}Aufbau der Testumgebung}{13}{}%
+\contentsline {section}{\numberline {3.1}Physische und Virtuelle Komponenten}{13}{}%
+\contentsline {subsection}{\numberline {3.1.1}Test-Hardware}{13}{}%
+\contentsline {subsection}{\numberline {3.1.2}Virtualisierungssoftware}{13}{}%
+\contentsline {subsection}{\numberline {3.1.3}Virtuelle Maschinen (VMs)}{13}{}%
+\contentsline {section}{\numberline {3.2}Logische Netzwerkarchitektur}{13}{}%
+\contentsline {section}{\numberline {3.3}Grundkonfiguration der IPS-Systeme}{13}{}%
+\contentsline {subsection}{\numberline {3.3.1}Konfiguration der FortiGate 70F}{13}{}%
+\contentsline {subsection}{\numberline {3.3.2}Konfiguration von OPNsense}{13}{}%
+\contentsline {chapter}{\numberline {4}Testing}{14}{}%
+\contentsline {section}{\numberline {4.1}Definition der Testfälle}{14}{}%
+\contentsline {section}{\numberline {4.2}Durchführen der Tests}{14}{}%
+\contentsline {chapter}{\numberline {5}Auswertung}{15}{}%
+\contentsline {section}{\numberline {5.1}Analyse der Testergebnisse}{15}{}%
+\contentsline {section}{\numberline {5.2}Vergleich der IPS-Systeme}{15}{}%
+\contentsline {chapter}{\numberline {6}Fazit und Ausblick}{16}{}%
+\contentsline {chapter}{\numberline {7}Abkürzungsverzeichnis}{17}{}%
+\contentsline {chapter}{\numberline {8}Selbstständigkeitserklärung}{18}{}%
+\providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 

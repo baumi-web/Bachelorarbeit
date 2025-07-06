@@ -1,0 +1,223 @@
+\documentclass[12pt]{scrreprt}
+\usepackage[ngerman]{babel}
+
+\usepackage[a4paper,left=4cm,right=2cm,top=2cm,bottom=2cm]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage{textcomp}
+\DeclareUnicodeCharacter{0308}{\"}
+
+
+
+\usepackage{graphicx}
+
+%\usepackage[backend=biber, defernumbers=true]{biblatex} %Imports biblatex package
+\usepackage{csquotes}
+\usepackage{listings}
+\usepackage[onehalfspacing]{setspace}
+\usepackage{amsmath}
+\usepackage{url}
+\setlength{\parindent}{0pt}
+
+\lstset{
+	language=Java,
+	basicstyle=\ttfamily\small,% Schriftgröße 10pt, Baselineskip 12pt
+	keywordstyle=\ttfamily\small,
+	stringstyle=\ttfamily\small,
+	numbers = left,
+	frame = single,
+	breaklines=true
+}
+
+
+\begin{document}
+	
+	\begin{titlepage}
+		\centering
+		
+		
+		\large
+		Duale Hochschule Sachsen \\
+		Staatliche Studienakademie Leipzig
+		
+		\vspace{2cm} 
+		
+		{\huge\bfseries Vergleich eines kommerziellen Intrusion-Prevention Systems und einer Open-Source-Lösung\par}
+		
+		\vspace{1.5cm} % Abstand
+		
+
+		{\Large Bachelorthesis\par}
+		
+		\vspace{0.5cm}
+		
+
+		zur Erlangung der staatlichen Abschlussbezeichnung eines \\
+		Bachelor of Science (B. Sc.)
+		
+		\vspace{0.5cm} 
+		
+		im Studiengang Informatik
+		
+		\vfill 
+		
+		% --- Angaben zur Person und Gutachtern ---
+		\begin{flushleft}
+			\begin{tabular}{@{}ll}
+				\textbf{Eingereicht von:} & Leon Baumgarten\\
+				& Traupitzer Dorfstraße 23, 06729 Elsteraue \\
+				& CS22-1 \\
+				& 5002213 \\
+				\\ 
+				\textbf{Erstgutachter:} & B.Sc. Oliver Hels \\
+				& WBS IT-Service GmbH\\
+				\\ 
+				\textbf{Zweitgutachter:} & Diplom IT Carsten Nitsch \\
+				& Duale Hochschule Sachsen
+			\end{tabular}
+			
+			\vspace{2cm}
+			
+{\today\par}
+			
+		\end{flushleft}
+		
+	\end{titlepage}
+	
+	
+%	\begin{titlepage}
+	%	\centering
+	%	{\scshape\Large Duale Hochschule Leipzig \par}
+	%	\vspace{1cm}
+	%	{\scshape\Large Studiengang Informatik\linebreak Studienrichtung Informatik \par}
+	%	\vspace{1.5cm}
+	%	{\huge\bfseries Vergleich eines kommerziellen Intrusion-Prevention-Systems und einer Open-Source-Lösung\par}
+	%	\vspace{2cm}
+	%	{\large  Eingereicht von: \ Leon Baumgarten \linebreak 5CS22-1 \linebreak Matrikelnummer: 5002213 \par}
+		
+	%	\vfill
+		
+	%	{\large \today\par}
+%	\end{titlepage} 
+	\thispagestyle{empty}
+	
+	\tableofcontents
+	\newpage
+	
+	\setcounter{page}{1}
+	
+	
+
+	\input{Einleitung.tex}
+	
+	\input{Kapitel1.tex}
+    \input{Kapitel2.tex}
+    \input{Kapitel3.tex}
+    \input{Kapitel4.tex}
+    \input{Kapitel5.tex}
+	\newpage
+	
+	
+	\chapter{Abkürzungsverzeichnis}
+	BSI - Bundesamt für Sicherheit in der Informationstechnik \\
+	DoS - Denial of Service \\
+	DDoS - Distributed Denial of Service\\
+	KMU - Kleine und Mittelständige Unternehmen\\
+	IPS - Intrusion Prevention System\\
+	IDS - Intrusion Detection System\\
+	NGFW - Next Generation Firewall\\
+	VPN - Virtual Private Network\\
+	DPI - Deep Packet Inspection
+	
+	\newpage
+	\chapter{Selbstständigkeitserklärung}
+	Ich versichere, dass ich die vorliegende Hausarbeit ohne
+	fremde Hilfe selbständig verfasst und nur die angegebenen Quellen und Hilfsmittel
+	benutzt habe. Wörtlich oder dem Sinn nach aus anderen Werken entnommene Stellen
+	sind unter Angabe der Quellen kenntlich gemacht. Die Arbeit wurde bisher in gleicher
+	oder ähnlicher Form weder veröffentlicht, noch einer anderen Prüfungsbehörde
+	vorgelegt. 
+	\vspace{16cm}
+	
+	Leipzig, \today \hspace{6cm} \line(-1,0){130}
+	\begin{center}
+		\hspace{5mm} {\footnotesize Leon Baumgarten}
+	\end{center}
+	
+	\newpage
+	\begin{thebibliography}{99} % 99 ist eine Platzhalterzahl, die die maximale Anzahl an Einträgen definiert.
+		
+\bibitem{BSI1}		
+Bundesamt für Sicherheit in der Informationstechnik\\
+\emph{Die Lage der IT-Sicherheit in Deutschland 2024} \\
+\url{https://www.bsi.bund.de/SharedDocs/Downloads/DE/BSI/Publikationen/Lageberichte/Lagebericht2024.html}\\
+Abgerufen am: 02.07.2025
+		
+\bibitem{BSI12}		
+Bundesamt für Sicherheit in der Informationstechnik\\
+\emph{Viren und Würmer} \\
+\url{https://www.bsi.bund.de/DE/Themen/Verbraucherinnen-und-Verbraucher/Cyber-Sicherheitslage/Methoden-der-Cyber-Kriminalitaet/Schadprogramme/Viren-und-Wuermer/viren-und-wuermer_node.html}\\
+Abgerufen am: 04.07.2025
+	
+	\bibitem{bitkom1}		
+Bitkom e.V.\\
+\emph{Wirtschaftsschutz 2024} \\
+\url{https://www.bitkom.org/sites/main/files/2024-08/240828-bitkom-charts-wirtschaftsschutz-cybercrime.pdf}\\
+Abgerufen am: 02.07.2025
+
+\bibitem{cloudflare1}		
+\emph{Was ist ein DDoS-Angriff?} \\
+\url{https://www.cloudflare.com/de-de/learning/ddos/what-is-a-ddos-attack/} \\
+Abgerufen am: 02.07.2025
+
+\bibitem{rfc1}		
+Wesley M. Eddy\\
+\emph{TCP SYN Flooding Attacks and Common Mitigations} \\
+\url{https://www.rfc-editor.org/rfc/rfc4987.html} \\
+Abgerufen am: 03.07.2025
+
+\bibitem{kasp1}		
+\emph{Was ist Schadsoftware?} \\
+\url{https://www.kaspersky.de/resource-center/definitions/what-is-malware}\\
+Abgerufen am: 04.07.2025
+
+\bibitem{ENISA1}
+European Union Agency for Cybersecurity\\
+\emph{ENISA Threat Landscape 2023} \\
+\url{https://www.enisa.europa.eu/publications/enisa-threat-landscape-2023}\\
+Abgerufen am: 04.07.2025
+
+\bibitem{wik1}
+Wikipedia (2025)\\
+\emph{Cyber Kill Chain} \\
+\url{https://de.wikipedia.org/wiki/Cyber_Kill_Chain}\\
+Abgerufen am: 04.07.2025
+
+\bibitem{wik12}
+Wikipedia (2025)\\
+\emph{Exploits} \\
+\url{https://de.wikipedia.org/wiki/Exploit}
+Abgerufen am: 04.07.2025
+
+\bibitem{Claudia1}
+Claudia Eckert\\
+\emph{IT-Sicherheit: Konzepte - Verfahren - Protokolle} \\
+Walter de Gruyter GmbH \& Co KG, 2014
+
+\bibitem{Suricata1}
+Open Information Security Foundation\\
+\emph{Suricata Documentation – Rules.} \\
+\url{https://docs.suricata.io/en/latest/rules/intro.html#action}\\
+Abgerufen am: 06.07.2025
+
+\bibitem{NIST1}
+Karen Scarfone, Peter Mell (NIST)\\
+\emph{Guide to Intrusion Detection and Prevention Systems (IDPS)} \\
+\url{https://csrc.nist.gov/pubs/sp/800/94/final}\\
+Abgerufen am: 06.07.2025
+	\end{thebibliography}
+	\newpage
+	
+\end{document}
+
+
+
