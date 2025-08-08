@@ -45,21 +45,21 @@ Eine besonders profitable und schädliche Form ist die Ransomware. Diese Malware
 Davon abzugrenzen ist Spyware, deren Hauptziel es ist, verdeckt Informationen über den Nutzer, dessen Verhalten und die auf dem System gespeicherten Daten zu sammeln. Eine der bekanntesten Unterarten sind Keylogger, die jeden Tastaturanschlag protokollieren. Auf diese Weise können Angreifer sensible Informationen wie Passwörter, Kreditkartennummern oder private Nachrichten mitschneiden und an ihre Server übermitteln.\\
 
 Durch die Analyse von bekannten Malware-Signaturen, das Erkennen von Anomalien im Protokollverfahren und das Blockieren von Verbindungen zu IP-Adressen und Domains können IPS-Systeme diese Bedrohungen erkennen und unterbinden.
-
+\newpage
 
 
 \subsection{Exploits}
-Der Begriff Exploit bezeichnet ein spezifisches Software-Fragment, einen Datenblock oder eine Befehlssequenz, die gezielt einen Programmierfehler oder eine konzeptionelle Schwachstelle in einem Computersystem oder einer Anwendung ausnutzt. Es ist entscheidend, zwischen der Schwachstelle, bei der es sich um einen passiven, latenten Fehler im Code handelt, und dem Exploit, dem aktiven Werkzeug zur Ausnutzung dieses Fehlers, zu unterscheiden. Das Ziel eines Exploits ist es, erhöhte Rechte zu erlangen (Privilege Escalation), beliebigen Code auf dem Zielsystem auszuführen (Arbitrary Code Execution) oder einen Denial-of-Service-Zustand auszulösen. Dies macht Exploits zu einem primären Vektor für den erstmaligen Einbruch in ein Netzwerk.\cite{wik12}\\
+Der Begriff Exploit bezeichnet ein spezifisches Software-Fragment, einen Datenblock oder eine Befehlssequenz, die gezielt einen Programmierfehler oder eine konzeptionelle Schwachstelle in einem Computersystem oder einer Anwendung ausnutzt. Es ist entscheidend zwischen der Schwachstelle, bei der es sich um einen passiven, latenten Fehler im Code handelt und dem Exploit, dem aktiven Werkzeug zur Ausnutzung dieses Fehlers, zu unterscheiden. Das Ziel eines Exploits ist es, erhöhte Rechte zu erlangen (Privilege Escalation), beliebigen Code auf dem Zielsystem auszuführen (Arbitrary Code Execution) oder einen Denial-of-Service-Zustand auszulösen. Dies macht Exploits zu einem primären Vektor für den erstmaligen Einbruch in ein Netzwerk.\cite{wik12}\\
 
 Der Prozess eines Angriffs, der auf der Ausnutzung von Schwachstellen basiert, lässt sich in die sieben Phasen der Cyber Kill Chain unterteilen, die den Ablauf aus der Perspektive des Angreifers strukturieren. Die erste Phase ist die \textbf{Reconnaissance}, in der ein Angreifer Informationen über das Ziel sammelt, um potenzielle Angriffsvektoren zu finden. In der zweiten Phase, der \textbf{Weaponization}, wird ein passender Exploit-Code mit einer Nutzlast (Payload) – dem eigentlichen Schadcode – gekoppelt. Anschließend erfolgt die \textbf{Delivery}, bei der der vorbereitete Exploit an das Zielsystem übermittelt wird, beispielsweise über eine Phishing-Mail oder einen verwundbaren Netzwerkdienst.\\
 
-In der vierten Phase, der \textbf{Exploitation}, wird der Exploit-Code zur Ausführung gebracht und löst den Fehler in der verwundbaren Software aus. Dies ermöglicht die Ausführung des mitgelieferten Payload. Darauf folgt die \textbf{Installation}, in der die Payload Persistenz auf dem System etabliert, um nach einem Neustart noch auf dem Zielsystem vorhanden zu sein. In der sechsten Phase, \textbf{Command and Control} (C2), baut die installierte Schadsoftware eine ausgehende Verbindung zu einem vom Angreifer kontrollierten Server auf. Über diesen Kanal kann der Angreifer das System fernsteuern. In der letzten Phase, \textbf{Actions on Objectives}, verfolgt der Angreifer seine eigentlichen Ziele, wie zum Beispiel den Diebstahl von Daten, die Ausbreitung im internen Netzwerk, oder die Verschlüsselung von Systemen zur Erpressung von Lösegeld.\cite{wik1}\\
-
+In der vierten Phase, der \textbf{Exploitation}, wird der Exploit-Code zur Ausführung gebracht und löst den Fehler in der verwundbaren Software aus. Dies ermöglicht die Ausführung des mitgelieferten Payloads. Darauf folgt die \textbf{Installation}, in der die Payload-Persistenz auf dem System etabliert wird, um nach einem Neustart noch auf dem Zielsystem vorhanden zu sein. In der sechsten Phase, \textbf{Command and Control} (C2), baut die installierte Schadsoftware eine ausgehende Verbindung zu einem vom Angreifer kontrollierten Server auf. Über diesen Kanal kann der Angreifer das System fernsteuern. In der letzten Phase, \textbf{Actions on Objectives}, verfolgt der Angreifer seine eigentlichen Ziele, wie zum Beispiel den Diebstahl von Daten, die Ausbreitung im internen Netzwerk, oder die Verschlüsselung von Systemen zur Erpressung von Lösegeld.\cite{wik1}\\
+\newpage
 \textbf{Zero-Day-Exploit:}\\
-Die gefährlichste Kategorie sind Zero-Day-Exploits. Der Begriff „Zero-Day“ leitet sich aus der Perspektive des Softwareherstellers ab: Ab dem Moment, in dem ein Exploit für eine bisher unbekannte Schwachstelle aktiv ausgenutzt wird, hat der Hersteller null Tage Zeit gehabt, einen entsprechenden Sicherheitspatch zu entwickeln und bereitzustellen. Diese Unkenntnis aufseiten der Verteidiger verschafft den Angreifern ein kritisches Zeitfenster, in dem ihre Angriffe mit sehr hoher Wahrscheinlichkeit erfolgreich sind.\\
+Die gefährlichste Kategorie sind Zero-Day-Exploits. Der Begriff „Zero-Day“ leitet sich aus der Perspektive des Softwareherstellers ab: Ab dem Moment, in dem ein Exploit für eine bisher unbekannte Schwachstelle aktiv ausgenutzt wird, hat der Hersteller null Tage Zeit gehabt, einen entsprechenden Sicherheitspatch zu entwickeln und bereitzustellen. Diese Unkenntnis seitens der Verteidiger verschafft den Angreifern ein kritisches Zeitfenster, in dem ihre Angriffe mit sehr hoher Wahrscheinlichkeit erfolgreich sind.\\
 Die besondere Gefahr von Zero-Day-Exploits liegt in ihrer Fähigkeit, traditionelle, signaturbasierte Schutzmechanismen wie die meisten Antivirenprogramme und Intrusion Prevention Systeme vollständig zu umgehen. Da der Angriff neu und unbekannt ist, existiert keine Signatur, kein Muster und kein Hashwert, nach dem ein solches System suchen könnte. Der Exploit ist für die Verteidigungslinie demnach quasi unsichtbar.\\
 Die Abwehr von Zero-Day-Angriffen erfordert daher fortschrittlichere Sicherheitsstrategien, die über die reine Signaturerkennung hinausgehen. Dazu gehören verhaltensbasierte Analyse (Heuristik) und Anomalieerkennung, bei denen ein System nicht nach bekannten Mustern, sondern nach ungewöhnlichem und potenziell bösartigem Verhalten sucht. Eine weitere wichtige Technik ist das Sandboxing, bei dem verdächtiger Code in einer isolierten, virtuellen Umgebung ausgeführt wird, um seine Aktionen zu beobachten, ohne das eigentliche System zu gefährden.
-
+\newpage
 \section{IDS / IPS Grundlagen}
 Nach der detaillierten Betrachtung der vielfältigen Bedrohungslandschaft im vorherigen Kapitel, werden nun die Systeme näher beleuchtet, die entwickelt wurden, um Netzwerke vor genannten Angriffen zu schützen. Während klassische Firewalls den Verkehr primär anhand von Adressen und Ports (Schicht 3 und 4 des OSI-Modells) filtern, gehen moderne Schutzmechanismen einen entscheidenden Schritt weiter, indem sie den Inhalt des Datenverkehrs analysieren. Im Zentrum dieser erweiterten Sicherheitsarchitektur stehen Intrusion Detection- und Intrusion Prevention-Systeme (IDS/IPS).
 
@@ -67,18 +67,18 @@ In den folgenden Absätzen werden dazu die theoretischen Grundlagen dieser Techn
 
 \subsection{Vom passiven Detektieren zum aktiven Verhindern}
 
-Die historischen Vorläufer moderner Angriffserkennungssysteme sind die Intrusion Detection Systeme (IDS). Sie entstanden aus der Notwendigkeit heraus, die Sicherheitsarchitekturen von Netzwerken zu ergänzen, da klassische Paketfilter-Firewalls allein nicht mehr ausreichten, um Angriffe auf höheren Protokollebenen zu erkennen. Das grundlegende Funktionsprinzip eines netzwerkbasierten IDS (NIDS) ist die der passiven Überwachung. Ein IDS wird im Netzwerk so implementiert, dass es eine Kopie des gesamten zu überwachenden Datenverkehrs erhält, ohne selbst Teil des aktiven Datenpfades zu sein. Technisch wird dies meist über einen sogenannten Mirror-Port (auch SPAN-Port genannt) an einem Netzwerk-Switch realisiert, der den gesamten Verkehr eines oder mehrerer anderer Ports auf den Port des IDS spiegelt. Eine alternative, oft als zuverlässiger geltende Methode ist der Einsatz eines dedizierten Network Taps, einer Hardware-Komponente, die direkt in die Leitung eingeschleift wird und eine verlustfreie Kopie des Verkehrs auskoppelt. Unabhängig von der Methode agiert das IDS somit stets wie ein Beobachter, der den Verkehr analysiert, ihn jedoch nicht direkt beeinflusst. Stellt das System eine potenzielle Bedrohung fest, ist seine primäre Aufgabe das Auslösen eines Alarms. Dieser Alarm kann in Form eines Eintrags in einer Log-Datei, einer Benachrichtigung per E-Mail oder einer Meldung an ein übergeordnetes Security Information and Event Management (SIEM) System erfolgen, wo die Daten für eine weitere Analyse korreliert werden. Die Kernfunktion eines IDS ist also die reine Detektion; es beantwortet die Frage: „Passiert hier gerade etwas Bösartiges?“ \cite{Claudia1}.\\
+Die historischen Vorläufer moderner Angriffserkennungssysteme sind die Intrusion Detection Systeme (IDS). Sie entstanden aus der Notwendigkeit heraus, die Sicherheitsarchitekturen von Netzwerken zu ergänzen, da klassische Paketfilter-Firewalls allein nicht mehr ausreichten, um Angriffe auf höheren Protokollebenen zu erkennen. Das grundlegende Funktionsprinzip eines netzwerkbasierten IDS (NIDS) ist die der passiven Überwachung. Ein IDS wird im Netzwerk so implementiert, dass es eine Kopie des gesamten zu überwachenden Datenverkehrs erhält, ohne selbst Teil des aktiven Datenpfades zu sein. Technisch wird dies meist über einen sogenannten Mirror-Port (auch SPAN-Port genannt) an einem Netzwerk-Switch realisiert, der den gesamten Verkehr eines oder mehrerer anderer Ports auf den Port des IDS spiegelt.\\ Eine alternative, oft als zuverlässiger geltende Methode, ist der Einsatz eines dedizierten Network Taps, einer Hardware-Komponente, die direkt in die Leitung eingeschleift wird und eine verlustfreie Kopie des Verkehrs auskoppelt. Unabhängig von der Methode agiert das IDS somit stets wie ein Beobachter, der den Verkehr analysiert, ihn jedoch nicht direkt beeinflusst. Stellt das System eine potenzielle Bedrohung fest, ist seine primäre Aufgabe das Auslösen eines Alarms. Dieser Alarm kann in Form eines Eintrags in einer Log-Datei, einer Benachrichtigung per E-Mail oder einer Meldung an ein übergeordnetes Security Information and Event Management (SIEM) System erfolgen, wo die Daten für eine weitere Analyse korreliert werden. Die Kernfunktion eines IDS ist also die reine Detektion; es beantwortet die Frage: „Passiert hier gerade etwas Bösartiges?“ \cite{Claudia1}.\\
 
 \textbf{Definition Network Tap:}\\
-Ein Network TAP (Test Access Point) ist eine dedizierte Hardware-Komponente, die eine exakte, verlustfreie Kopie des gesamten Datenverkehrs von einer physischen Netzwerkverbindung erstellt. Das Gerät wird direkt in die Kabelverbindung, beispielsweise zwischen einem Router und einem Switch, eingeschleift und leitet den durchfließenden Verkehr passiv an einen oder mehrere Monitor-Ports weiter, an denen das Überwachungssystem angeschlossen ist. Im Gegensatz zu einem SPAN-Port eines Switches, der bei hoher Netzwerkauslastung unter Umständen Pakete verwirft, garantiert ein TAP die Weiterleitung allen Traffics, einschließlich fehlerhafter Pakete. Zudem sind die meisten TAPs ausfallsicher konzipiert.\cite{TAP1}\\
+Ein Network TAP (Test Access Point) ist eine dedizierte Hardware-Komponente, die eine exakte, verlustfreie Kopie des gesamten Datenverkehrs von einer physischen Netzwerkverbindung erstellt. Das Gerät wird direkt in die Kabelverbindung, beispielsweise zwischen einem Router und einem Switch, eingeschleift und leitet den durchfließenden Verkehr passiv an einen oder mehrere Monitor-Ports weiter, an denen das Überwachungssystem angeschlossen ist. Im Gegensatz zu einem SPAN-Port eines Switches, der bei hoher Netzwerkauslastung unter Umständen Pakete verwirft, garantiert ein TAP die Weiterleitung allen Traffics, einschließlich fehlerhafter Pakete. Zudem sind die meisten TAPs ausfallsicher konzipiert.\cite{TAP1}\\\\
 
 Die entscheidende Schwäche dieses passiven Ansatzes liegt in der systembedingten Latenz zwischen der Erkennung eines Angriffs und der Einleitung einer Gegenmaßnahme. Nachdem ein IDS einen Alarm ausgelöst hat, ist eine Reaktion erforderlich, um den Angriff zu stoppen. Diese Reaktion kann manuell durch einen Administrator erfolgen, der beispielsweise eine neue Regel in der Firewall konfiguriert, oder durch ein nachgeschaltetes, automatisiertes System. In der Zeit, die dieser Prozess unweigerlich in Anspruch nimmt, kann der Angriff sein Ziel bereits erreicht und erheblichen Schaden verursacht haben. Ein weiteres gravierendes, operatives Problem ist die sogenannte „Alert Fatigue“ (Alarm-Müdigkeit). Hochsensibel konfigurierte IDS können eine enorme Menge an Alarmen generieren, von denen viele Falschmeldungen (False Positives) sind. Administratoren werden von dieser Flut an Informationen überfordert, was dazu führen kann, dass sie kritische, echte Alarme übersehen oder weniger ernst nehmen.\\
 
 Um diese kritische Schutzlücke zu schließen und die Reaktionszeit auf null zu reduzieren, wurden die Intrusion Prevention Systeme (IPS) entwickelt. Im Gegensatz zu einem IDS wird ein IPS aktiv und „in-line“ im Netzwerk platziert und behebt damit dessen grundlegende Schwäche. Diese architektonische Entscheidung ist fundamental: Das IPS fungiert als aktiver Kontrollpunkt, den der gesamte Datenverkehr passieren muss, um sein Ziel zu erreichen. Dies birgt jedoch auch neue Risiken: Ein IPS kann zu einem Leistungsengpass (Bottleneck) werden und stellt einen Single Point of Failure dar. Fällt das IPS aus, wird die gesamte Netzwerkverbindung unterbrochen, sofern keine Bypass-Mechanismen vorhanden sind.\\
 
-Diese direkte Positionierung im Datenstrom ermöglicht es einem IPS, nicht nur zu erkennen, sondern auch unmittelbar und automatisiert zu handeln. Erkennt es einen Angriff, kann es eine Reihe von vordefinierten Aktionen durchführen. Die Palette dieser Reaktionsmöglichkeiten ist breit und reicht von dem einfachen Blockieren oder Verwerfen (Block/Drop) einzelner bösartiger Datenpakete über das aktive Zurücksetzen von TCP-Verbindungen (Reset), um eine Sitzung sauber zu beenden, bis hin zur reinen Alarmierung (Alert). Letztere wird genutzt, um neue Regeln im Überwachungsmodus zu testen, ohne den produktiven Verkehr zu gefährden. \cite{Suricata1, NIST1}\\
+Diese direkte Positionierung im Datenstrom ermöglicht es einem IPS, nicht nur zu erkennen, sondern auch unmittelbar und automatisiert zu handeln. Erkennt es einen Angriff, kann es eine Reihe von vordefinierten Aktionen durchführen. Die Palette dieser Reaktionsmöglichkeiten ist breit und reicht von dem einfachen Blockieren oder Verwerfen (Block/Drop) einzelner bösartiger Datenpakete über das aktive Zurücksetzen von TCP-Verbindungen (Reset), um eine Sitzung sauber zu beenden, bis hin zur reinen Alarmierung (Alert). Letztere kann dafür genutzt werden, um neue Regeln im Überwachungsmodus zu testen, ohne den produktiven Verkehr zu gefährden. \cite{Suricata1, NIST1}\\
 
-Darüber hinaus bieten viele Systeme erweiterte, oftmals herstellerabhängige Reaktionsmöglichkeiten. Dazu zählt beispielsweise die temporäre Sperrung der angreifenden IP-Adresse (Shun) oder die Umleitung des Angriffsverkehrs auf ein Ködersystem (Quarantäne/Sinkhole) zur weiteren Analyse und zur Sammlung von Informationen über den Angreifer. Die genaue Auswahl und die Granularität der verfügbaren Aktionen sind ein wesentliches Unterscheidungsmerkmal des jeweiligen Produkts und ein Indikator für seine technische Reife. Welche dieser Funktionen von den in dieser Arbeit untersuchten Systemen, FortiGate und OPNsense, im Detail unterstützt werden, wird im Rahmen ihrer jeweiligen Vorstellung in Kapitel 2.3 detailliert erläutert.
+Darüber hinaus bieten viele Systeme erweiterte, oftmals herstellerabhängige Reaktionsmöglichkeiten. Dazu zählt beispielsweise die temporäre Sperrung der angreifenden IP-Adresse (Shun) oder die Umleitung des Angriffsverkehrs auf ein Ködersystem (Quarantäne/Sinkhole) zur weiteren Analyse und zur Sammlung von Informationen über den Angreifer. Die genaue Auswahl und die Granularität der verfügbaren Aktionen sind ein wesentliches Unterscheidungsmerkmal des jeweiligen Produkts und ein Indikator für seine technische Reife. Welche dieser Funktionen von den in dieser Arbeit untersuchten Systemen FortiGate und OPNsense im Detail unterstützt werden, wird im Rahmen ihrer jeweiligen Vorstellung in Kapitel 2.3 detailliert erläutert.
 \newpage
 \subsection{Funktionsprinzip: Deep Packet Inspection (DPI)}
 Die technologische Grundlage, die moderne Intrusion Prevention Systeme von klassischen Firewalls unterscheidet und ihre Effektivität überhaupt erst ermöglicht, ist die Deep Packet Inspection (DPI). Während traditionelle Paketfilter ihre Entscheidungen ausschließlich auf Basis der Header-Informationen der Schichten 3 und 4 des OSI-Modells (IP-Adressen, Ports) treffen, geht die DPI-Technologie entscheidende Schritte weiter. Selbst die fortgeschrittenere Stateful Packet Inspection (SPI), die den Zustand von Verbindungen verfolgt, analysiert nicht den eigentlichen Inhalt der übertragenen Daten. Die DPI hingegen untersucht nicht nur die Header, sondern auch die Nutzlast (Payload) der Datenpakete und kann den Datenstrom bis zur Anwendungsschicht (Schicht 7) analysieren, um so den Kontext und die Bedeutung der übertragenen Daten zu verstehen.\\
@@ -94,7 +94,7 @@ Nachdem die Deep Packet Inspection (DPI) den Netzwerkverkehr in einen analysierb
 
 \textbf{Signaturbasierte Erkennung:}
 
-Die signaturbasierte Erkennung, auch als Missbrauchserkennung (Misuse Detection) bekannt, stellt den fundamentalen und historisch älteren Ansatz zur Identifizierung von Cyber-Angriffen dar. Sie basiert auf einem fest definierten, vorab erstellten Wissensschatz über bekannte Bedrohungen und sucht im Netzwerkverkehr exakt nach den Mustern, die diesen Bedrohungen zugeordnet sind. Das zugrundeliegende Prinzip ist vergleichbar mit dem eines Virenscanners, der nach den eindeutigen "Fingerabdrücken" bekannter Viren sucht, jedoch auf der Ebene von Netzwerkprotokollen und Datenströmen.\\
+Die signaturbasierte Erkennung stellt den fundamentalen und historisch älteren Ansatz zur Identifizierung von Cyber-Angriffen dar. Sie basiert auf einem fest definierten, vorab erstellten Wissensschatz über bekannte Bedrohungen und sucht im Netzwerkverkehr exakt nach den Mustern, die diesen Bedrohungen zugeordnet sind. Das zugrundeliegende Prinzip ist vergleichbar mit dem eines Virenscanners, der nach den eindeutigen "Fingerabdrücken" bekannter Viren sucht, jedoch auf der Ebene von Netzwerkprotokollen und Datenströmen.\\
 
 Der Lebenszyklus einer Signatur beginnt mit der Entdeckung einer neuen Bedrohung. Sicherheitsforscher bei Herstellern wie Fortinet oder in Open-Source-Communities analysieren neue Malware oder die Vorgehensweise eines Exploits im Detail. Dabei extrahieren sie eindeutige, unveränderliche Merkmale. Dies kann eine bestimmte Zeichenfolge in der Nutzlast, eine charakteristische Abfolge von Befehlen oder ein spezifischer Wert in einem Protokoll-Header sein. Auf Basis dieser Analyse wird eine Signatur als formale Regel erstellt. Eine moderne Signatur ist dabei weit mehr als eine simple Zeichenkette. Sie ist ein mehrdimensionales Konstrukt, das typischerweise folgende Elemente umfasst:\\
 \setlist{noitemsep}
@@ -122,13 +122,182 @@ Nach der Trainingsphase geht das System in den aktiven Erkennungsmodus über und
 
 \item\textbf{ Statistische Anomalien:} \\Hierbei werden die aktuellen Metriken mit dem statistischen Modell der Baseline verglichen. Das System berechnet für beobachtete Ereignisse einen Anomalie-Score. Ein plötzlicher Anstieg der fehlgeschlagenen Login-Versuche auf einem Server, ein drastischer Anstieg des ausgehenden Verkehrs von einer Workstation mitten in der Nacht oder die Nutzung eines seltenen Protokolls durch einen Benutzer, der dies noch nie getan hat, würde den Score in die Höhe treiben. Überschreitet dieser Score einen vordefinierten Schwellenwert (Threshold), wird ein Alarm ausgelöst.
 \end{itemize}
-Die größte Herausforderung und der entscheidende Nachteil dieses Ansatzes ist die notorisch hohe Rate an Falschmeldungen (False Positives). Das ''normale'' Verhalten eines Netzwerks ist nicht statisch. Jede legitime, aber neue und unvorhergesehene Aktivität , wie beispielsweise die Einführung eines neuen Cloud-Dienstes, eine Systemwartung oder eine Marketing-Kampagne mit hohem Traffic, kann fälschlicherweise als Anomalie eingestuft werden. Dies führt zum operativen Problem der ''Alert Fatigue'', bei dem Administratoren durch eine Flut an Alarmen die Übersicht verlieren und die Sensitivität des Systems herunterregulieren, wodurch dessen Effektivität sinkt. Zudem besteht die Gefahr der ''Baseline Pollution''. Dies definiert die Lernphase in einem bereits kompromittierten Netzwerk, wodurch das bösartige Verhalten als Teil der Norm erlernt und zukünftig nicht mehr erkannt wird.\\
+Die größte Herausforderung und der entscheidende Nachteil dieses Ansatzes ist die notorisch hohe Rate an Falschmeldungen (False Positives), da das ''normale'' Verhalten eines Netzwerks nicht statisch ist. Jede legitime, aber neue und unvorhergesehene Aktivität , wie beispielsweise die Einführung eines neuen Cloud-Dienstes, eine Systemwartung oder eine Marketing-Kampagne mit hohem Traffic, kann fälschlicherweise als Anomalie eingestuft werden. Dies führt zum operativen Problem der ''Alert Fatigue'', bei dem Administratoren durch eine Flut an Alarmen die Übersicht verlieren und die Sensitivität des Systems herunterregulieren, wodurch dessen Effektivität sinkt. Zudem besteht die Gefahr der ''Baseline Pollution''. Dies definiert die Lernphase in einem bereits kompromittierten Netzwerk, wodurch das bösartige Verhalten als Teil der Norm erlernt und zukünftig nicht mehr erkannt wird.\\
 
 Aus diesen Gründen wird die anomaliebasierte Erkennung in der Praxis fast immer in einem hybriden Modell als Ergänzung zur signaturbasierten Erkennung eingesetzt. Sie dient als intelligentes Frühwarnsystem für neuartige Bedrohungen.
+\newpage
 \section{Vorstellung der Systeme}
 Nachdem die vorangegangenen Kapitel die theoretischen Grundlagen der Bedrohungslage und Funktionsweise von Intrusion Prevention Systemen erläutert haben, widmet sich dieses Kapitel der Vorstellung der beiden für den praktischen Vergleich ausgewählten Systeme. Die Auswahl fiel auf eine FortiGate-Firewall als prominenten Vertreter der kommerziellen NGFW und auf OPNsense als repräsentatives Beispiel für eine flexible, weit verbreitete Open-Source-Alternative.\\
 
 Diese beiden Systeme wurden gezielt gewählt, da sie in ihren jeweiligen Segmenten eine hohe Marktrelevanz besitzen und fundamental unterschiedliche Philosophien in Bezug auf Architektur, Lizenzmodell und Verwaltung verkörpern. Um eine fundierte Vergleichsbasis zu schaffen, werden die beiden Systeme zunächst in separaten Unterkapiteln detailliert vorgestellt. Dabei wird auf ihre jeweilige Architektur, die technische Implementierung der IPS-Funktionalität und das zugrundeliegende Betriebsmodell eingegangen. Abschließend fasst eine synoptische Gegenüberstellung die zentralen Unterschiede tabellarisch zusammen, um eine klare Ausgangslage für die Konzeption der Testumgebung im nachfolgenden Kapitel zu schaffen.
+
 \subsection{Der kommerzielle Vertreter: FortiGate}
+Als kommerzieller Vertreter für den Systemvergleich wird die FortiGate 70F des Herstellers Fortinet untersucht. Fortinet ist ein 1999 gegründetes, US-amerikanisches Unternehmen und zählt zu den globalen Marktführern im Bereich der Cybersicherheit. Die Unternehmensphilosophie manifestiert sich in der "Fortinet Security Fabric", einer Architektur, die darauf abzielt, eine breite, integrierte und automatisierte Sicherheit über die gesamte digitale Infrastruktur eines Unternehmens zu spannen. Das Kernstück dieser Architektur und das "Flaggschiff-Produkt" des Unternehmens ist die FortiGate Next-Generation Firewall (NGFW).\\\\
+
+\textbf{Produktphilosophie und Architektur:}\\
+Die grundlegende Philosophie hinter der FortiGate-Plattform ist die der Konsolidierung von Sicherheitsfunktionen. Die Plattform basiert auf dem Prinzip des Unified Threat Management (UTM), dessen Ziel es ist, eine Vielzahl von ehemals separaten Sicherheitslösungen in einem einzigen Gerät zu vereinen. Eine FortiGate ist somit weit mehr als eine klassische Firewall. Sie integriert Funktionen wie Stateful Packet Inspection, VPN-Gateway, Intrusion Prevention (IPS), Antivirus-Scanning, Web- und DNS-Filterung sowie Application Control. All diese Sicherheitsdienste werden durch ein einziges, proprietäres Betriebssystem namens FortiOS gesteuert und verwaltet. Da alle Sicherheits-Engines von einem einzigen Hersteller entwickelt und in ein Betriebssystem integriert werden, wird eine nahtlose Kompatibilität und eine optimierte Performance angestrebt.\cite{Forti}\\\\
+
+\textbf{Hardware-Architektur: Spezialisierte ASICs:}\\
+Ein fundamentaler architektonischer Aspekt der FortiGate-Systeme ist der Einsatz von spezialisierter Hardware. FortiGate-Systeme sind geschlossene Appliances, deren Software untrennbar mit der Hardware verbunden ist. Ein zentrales Merkmal der FortiGate 70F und anderer Modelle ist der Einsatz von anwendungsspezifischen integrierten Schaltungen (ASICs), die unter Fortinet als Security Processing Units (SPUs) bezeichnet werden. Anstatt alle sicherheitsrelevanten Berechnungen von der Haupt-CPU des Systems durchführen zu lassen, werden rechenintensive Aufgaben an diese Prozessoren ausgelagert (Hardware-Offloading). Dies betrifft insbesondere:\\
+*Network Processors (NPs): Beschleunigung die grundlegenden Paketverarbeitungen auf den Schichten 3 und 4 (Firewalling, NAT).\\
+*Content Processors (CPs): Sind für die Inhaltsanalyse zuständig und beschleunigen rechenintensive Prozesse wie die Deep Packet Inspection (DPI) für das IPS, Viren-Analyse und die Entschlüsselung von SSL/TLS-Verkehr.\\
+
+Dadurch soll sichergestellt werden, dass die Aktivierung von Sicherheitsfunktionen wie dem IPS nur einen minimalen Einfluss auf den Netzwerkdurchsatz und die Latenz hat.\cite{Forti2}\\\\
+
+\textbf{Implementierung des IPS:}\\
+Die IPS-Funktionalität ist in der FortiGate kein globaler Dienst, sondern ein tief in die Verarbeitungslogik von Firewall-Richtlinien (Policies) integrierter Mechanismus. Diese richtlinienbasierte Architektur ist der Schlüssel zur granularen und performanten Anwendung von Sicherheitsmaßnahmen. Anstatt den gesamten Netzwerkverkehr pauschal zu überprüfen, wird die Inhaltsanalyse gezielt für definierte Datenströme aktiviert.\\
+
+Die Konfiguration erfolgt über Security Profiles (Sicherheitsprofile). Ein Security Profile ist ein Bündel von Einstellungen für die verschiedenen Sicherheitsdienste wie Antivirus, Web-Filter, Application Control und IPS. Dafür wird innerhalb eines Security Profiles ein sogenannter IPS Sensor konfiguriert. In diesem Sensor wird detailliert festgelegt, welche Angriffs-Signaturen und -Kategorien (z.B. Web-Client, Malware, Botnet) für den zu schützenden Verkehr relevant sind und welche Aktion bei einem Treffer ausgeführt werden soll (Block, Monitor, Reset, etc.).\\
+
+Die Stärke dieses Konzepts liegt in der Möglichkeit, beliebig viele, unterschiedliche IPS Sensoren für verschiedene Anwendungsfälle zu erstellen und diese dann gezielt den jeweiligen Firewall-Regeln zuzuweisen. Beispielsweise kann für eine Regel, die den Zugriff aus dem Internet auf einen öffentlichen Webserver erlaubt, ein sehr strenger IPS Sensor mit Fokus auf Web-Attacken (SQL-Injection, Cross-Site Scripting) hinterlegt werden. Gleichzeitig kann eine andere Regel, die den Surf-Verkehr interner Mitarbeiter ins Internet regelt, einen anderen IPS Sensor verwenden, der auf den Schutz von Client-Anwendungen (Browser, Office-Programme) spezialisiert ist. Für hochperformanten Server-zu-Server-Verkehr im internen Netz kann hingegen bewusst auf ein IPS-Profil verzichtet werden, um die Latenz zu minimieren.
+
+Die Art und Weise, wie die Deep Packet Inspection (DPI) für diese Analyse durchgeführt wird, wird ebenfalls in der Firewall-Regel selbst festgelegt.Es kann pro Richtlinie den Inspection Mode (Inspektionsmodus) ausgewählt werden:\\
+
+*Der schnelle Flow-based-Modus analysiert den Verkehr ohne vollständige Pufferung und ist der Standard für die Echtzeit-Prävention von Exploits im IPS.\\
+*Der gründlichere Proxy-based-Modus puffert ganze Objekte, bevor er sie scannt, und wird oft in Kombination mit Antivirus-Profilen für Web- oder E-Mail-Verkehr genutzt.\\
+
+Durch diese Kombination aus individuell konfigurierbaren IPS Sensoren und der Wahl des Inspektionsmodus pro Firewall-Regel ermöglicht die FortiGate-Architektur eine sehr flexible, kontextbezogene und ressourcenschonende Anwendung ihrer Intrusion-Prevention-Funktionen.\\
+
+Ein wesentlicher Aspekt der kommerziellen Philosophie von Fortinet ist die Absicherung der Sicherheitsplattform selbst. Als geschlossene Hardware-Appliance mit dem gehärteten, proprietären Betriebssystem FortiOS obliegt die Verantwortung für die Sicherheit des Basissystems dem Hersteller. Fortinet liefert regelmäßig Sicherheitsupdates für das Betriebssystem, um Schwachstellen zu schließen. Dies soll das Risiko einer direkten Kompromittierung der Firewall minimieren. Physische Angriffe, wie beispielsweise Evil.Maid, werden durch manipulationssichere Gehäuse und spezielle Bootloader erschwert.
+
 \subsection{Die Open-Source-Alternative: OPNsense}
+Die Entstehungsgeschichte von OPNsense ist eng mit der Entwicklung anderer Open-Source-Firewall-Projekte verknüpft und für das Verständnis seiner Philosophie entscheidend. Das Projekt wurde Anfang 2015 als "Fork" des damals dominanten pfSense-Projekts ins Leben gerufen. Maßgeblich vorangetrieben wurde dieser Schritt von der niederländischen Firma Deciso B.V. Die Gründe für die Abspaltung waren konkret und zielgerichtet: Zum Einen gab es Bedenken hinsichtlich der Lizenzpolitik und den Wunsch nach einer eindeutigen, liberalen 2-Klausel-BSD-Lizenz, um maximale Freiheit für private und kommerzielle Nutzer zu garantieren. Auch die Entwicklung von pfSense wurde als zunehmend geschlossen und intransparent wahrgenommen. Als Reaktion darauf setzte OPNsense von Beginn an auf eine offene Entwicklung und die aktive Beteiligung der Community. Außerdem lagen technische Gründe vor, insbesondere der Wunsch nach einer moderneren und besser strukturierten Codebasis, um die Wartbarkeit zu erhöhen und externe Beiträge zu erleichtern. Die Philosophie von OPNsense basiert seither konsequent auf diesen Gründungsprinzipien der Transparenz, Modularität und Sicherheit, gestützt auf das robuste FreeBSD-Betriebssystem. Zusätzliche Legitimität erhielt das junge Projekt, als der Gründer des ursprünglichen m0n0wall-Projekts, von dem einst pfSense abstammte, nach dessen Einstellung seiner Community den Wechsel zu OPNsense empfahl.\cite{Fork}\\\\
+
+\textbf{Produktphilosophie und Architektur:}\\
+Im direkten Gegensatz zum integrierten All-in-One-Ansatz von Fortinet verkörpert OPNsense die Kernprinzipien der Open-Source-Welt: Modularität, Transparenz und Flexibilität. Die grundlegende Philosophie besteht darin, eine stabile und sichere Kernplattform für Routing und Firewalling bereitzustellen, die vom Anwender durch eine Vielzahl von Plugins je nach Bedarf erweitert werden kann. Die Offenlegung des gesamten Quellcodes schafft ein hohes Maß an Vertrauen und ermöglicht es der globalen Sicherheits-Community, den Code auf potenzielle Schwachstellen zu überprüfen.\cite{Fork}\\
+
+Die technische Basis von OPNsense ist das robuste und für seine Stabilität und Sicherheit bekannte Betriebssystem FreeBSD. Zusätzlich integriert OPNsense sicherheitsrelevante Features aus dem HardenedBSD-Projekt, um die Angriffsfläche des Basissystems weiter zu reduzieren. Die Verwaltung erfolgt, ähnlich wie bei FortiGate, primär über eine webbasierte grafische Benutzeroberfläche (GUI), die die Navigation innerhalb des Systems erleichtert.\\
+
+Im Gegensatz zu einer geschlossenen Appliance liegt die Verantwortung für die Absicherung des Systems, auf dem OPNsense läuft, vollständig beim Anwender. Dies schließt sowohl die physische Sicherheit der Hardware als auch die Härtung des Betriebssystems ein. Ein physischer Angriff wie der "Evil Maid"-Angriff, bei dem ein Angreifer mit kurzzeitigem, unbeaufsichtigtem Zugriff auf die Hardware eine Kompromittierung durchführt, stellt hier ein realistisches Szenario dar. Obwohl die Basis aus FreeBSD und HardenedBSD bereits ein hohes Sicherheitsniveau bietet, muss der Anwender durch eigene Maßnahmen wie die Verschlüsselung der Festplatte, die Absicherung des BIOS/UEFI und die regelmäßige Installation von System- und Sicherheitsupdates die Integrität der gesamten Plattform gewährleisten. Dieser Aspekt stellt einen signifikanten Unterschied in der operativen Verantwortung im Vergleich zum kommerziellen Modell dar.\\\\
+
+\textbf{Hardware-Architektur:}\\
+Ein fundamentaler architektonischer Unterschied zu FortiGate ist die vollständige Hardware-Unabhängigkeit von OPNsense. Es handelt sich um eine reine Software-Distribution, die auf nahezu jeder Standard-x86-64-Architektur installiert werden kann. Dies bietet dem Anwender eine enorme Flexibilität bei der Wahl der Hardware-Plattform. Die Einsatzmöglichkeiten reichen von kleinen, energieeffizienten Embedded-Systemen für den Heim- oder Kleinbürogebrauch über virtuelle Maschinen in Rechenzentren, bis hin zu leistungsstarken Rack-Mount-Servern mit Multi-Gigabit-Netzwerkkarten für den Unternehmenseinsatz.\\
+
+Diese Flexibilität hat jedoch zur Folge, dass die gesamte Verarbeitungs- und Analyse-Last auf der Standard-CPU des gewählten Systems liegt. OPNsense nutzt keine spezialisierten ASICs oder Hardware-Beschleuniger. Die Performance des Gesamtsystems, insbesondere der Durchsatz bei aktivierter Deep Packet Inspection, ist somit direkt und untrennbar von der Leistung der gewählten CPU, der Menge und Geschwindigkeit des Arbeitsspeichers (RAM) und der Qualität der Netzwerkkarten (NICs) abhängig. Die Verantwortung für die korrekte Dimensionierung der Hardware liegt somit vollständig beim Anwender.\\\\
+
+\textbf{Implementierung des Intrusion Prevention Systems:}\\
+Die Intrusion-Prevention-Funktionalität ist in OPNsense nicht Teil des Kernsystems, sondern wird als modulares Plugin realisiert. Der Anwender kann wählen, welche IPS-Engine er installieren möchte. Als Standard hat sich hierbei Suricata etabliert, eine hochperformante, multithreading-fähige und weit verbreitete Open-Source-IPS-Engine.\\
+\setlist{noitemsep}
+\begin{itemize}
+	\item Implementierung als Dienst:\\ Nach der Installation über die Plugin-Verwaltung läuft Suricata als eigenständiger Dienst auf dem OPNsense-System. Für die Prävention wird der Dienst im "Inline-Modus" betrieben. In diesem Modus wird der gesamte Netzwerkverkehr einer oder mehrerer ausgewählter Netzwerkschnittstellen, beispielsweise der WAN-Schnitstelle, direkt durch die Suricata-Engine geleitet. Dies ist funktional äquivalent zum Flow-based-Modus einer FortiGate und ermöglicht das Blockieren von bösartigem Verkehr in Echtzeit.\\\\
+
+	\item Die zentrale Rolle der Regel-Sets (Threat Intelligence):\\ Während bei FortiGate die Threat Intelligence als fertiger Service von den FortiGuard Labs bezogen wird, liegt die Verantwortung für die Auswahl, Konfiguration und Pflege der Erkennungsregeln bei OPNsense vollständig beim Administrator des Systems. Der Nutzer muss aktiv entscheiden, welche Regel-Sets er verwenden möchte. Gängige Optionen sind:\\
+* ET Open (Emerging Threats Open): Ein umfassendes Regel-Set, das von der Community gepflegt und kostenlos zur Verfügung gestellt wird. Es bietet eine große Basis für den Schutz vor einer breiten Palette von Bedrohungen.\\
+* ET Pro (Emerging Threats Pro): Eine kostenpflichtige, abonnementbasierte Version der Emerging-Threats-Regeln. Dieses Set bietet mehr Signaturen, eine schnellere Veröffentlichung von Regeln für neue Bedrohungen und wird durch professionellen Support unterstützt.\\
+* Cisco Talos Rulesets: Cisco Talos stellt die offiziellen Regeln für die IPS-Engine Snort bereit. Da Suricata in weiten Teilen kompatibel zu Snort ist, sind diese Regeln eine sehr populäre und hochwertige Alternative oder Ergänzung zu den ET-Regeln.\\\\
+
+	\item Konfiguration und ''Tuning'': \\Die reine Aktivierung eines Regel-Sets reicht oft nicht aus. Ein wesentlicher Teil der Arbeit des Administrators besteht im sogenannten "Tuning". Dabei müssen Regeln, die im spezifischen Netzwerkumfeld zu Falschmeldungen (False Positives) führen, identifiziert und gezielt deaktiviert oder angepasst werden. Dies erfordert ein tiefes Verständnis des eigenen Netzwerkverkehrs und der Funktionsweise des IPS und stellt einen signifikanten personellen Mehraufwand im Vergleich zu einer kommerziellen Lösung dar.\\\\
+\end{itemize}
+\textbf{Betriebs- und Kostenmodell:}\\
+Das Betriebsmodell von OPNsense ist durch Offenheit und Eigenverantwortung geprägt. Die Software selbst, einschließlich aller Plugins, ist kostenlos und unterliegt keinen Lizenzgebühren. Die Total Cost of Ownership (TCO) setzt sich somit anders zusammen als bei einem kommerziellen Produkt. Die Hauptkostenpunkte sind die Anschaffung der Hardware und der oft unterschätzte personelle Aufwand für die initiale Konfiguration, die kontinuierliche Wartung, das Update-Management und das Tuning der IPS-Regeln. Wiederkehrende Kosten entstehen nur, wenn man sich für optionale kommerzielle Regel-Sets oder einen professionellen Support-Vertrag, beispielsweise direkt von Deciso, entscheidet. Der primäre Support-Kanal ist jedoch die aktive Community über Foren, und die umfangreiche offizielle Dokumentation.
+\newpage
+
 \subsection{Synoptische Gegenüberstellung}
+Nachdem in den vorangegangenen Kapiteln die beiden für diese Arbeit ausgewählten Systeme einzeln vorgestellt wurden, dient dieser Abschnitt dazu, die gewonnenen Erkenntnisse in einem direkten Vergleich zu verdichten.\\
+Die nachfolgende Tabelle stellt die zentralen konzeptionellen, technischen und operativen Eigenschaften der beiden Lösungen synoptisch gegenüber.\\
+
+	\begin{longtable}{>{\RaggedRight}p{0.2\textwidth} >{\RaggedRight}p{0.35\textwidth} >{\RaggedRight}p{0.35\textwidth}}
+	% --- KOPF- UND FUSSZEILEN-DEFINITIONEN FÜR LONGTABLE ---
+	\toprule
+	\textbf{Kriterium} & \textbf{FortiGate} & \textbf{OPNsense} \\
+	\midrule
+	\endfirsthead
+	
+	\toprule
+	\textbf{Kriterium} & \textbf{FortiGate} & \textbf{OPNsense} \\
+	\midrule
+	\endhead
+	
+	\bottomrule
+	\endfoot
+	
+	\bottomrule
+	\endlastfoot
+	
+	% --- TABELLENINHALT ---
+	
+	% KATEGORIE I
+	\multicolumn{3}{l}{\textbf{I. Grundlegende Architektur \& Philosophie}} \\
+	\midrule
+	System-Typ & Integrierte Security-Appliance (Hardware und Software aus einer Hand) & Software-Distribution, die auf Standard-Hardware installiert wird \\
+	\addlinespace
+	Grundphilosophie & Unified Threat Management (UTM): Konsolidierung vieler Sicherheitsfunktionen in einem Gerät & Modulare Plattform: Grundfunktionen sind enthalten, erweiterte Funktionen werden als Plugins hinzugefügt \\
+	\addlinespace
+	Entwicklungsmodell & Proprietär / Closed-Source; Entwicklung erfolgt intern durch Fortinet & Open-Source; Entwicklung wird von der Firma Deciso B.V. und einer globalen Community vorangetrieben \\
+	\addlinespace
+	Quellcode-Verfügbarkeit & Nicht verfügbar & Vollständig offen und einsehbar \\
+	\addlinespace
+	Zielgruppe & Unternehmen jeder Größe, von KMU bis zu Großkonzernen und Providern & Primär KMU, Heimanwender, Bastler und Organisationen mit hohem Bedarf an Anpassbarkeit \\
+	\midrule
+	
+	% KATEGORIE II
+	\multicolumn{3}{l}{\textbf{II. Technische Implementierung des IPS}} \\
+	\midrule
+	IPS-Engine & Proprietäre, in FortiOS tief integrierte Engine & Suricata (oder optional Snort) als eigenständiger Dienst/Plugin \\
+	\addlinespace
+	Hardware-Beschleunigung & \textbf{Ja}, durch spezialisierte ASICs (Security Processing Units - SPUs) zur Auslagerung der Analyse & \textbf{Nein}, die gesamte Verarbeitungslast liegt auf der Standard-x86-CPU des Systems \\
+	\addlinespace
+	Inspektionsmodi & Flow-based und Proxy-based als wählbare Modi pro Firewall-Regel & Inline-Modus (vergleichbar mit Flow-based), für Proxy-Funktionalität ist ein separater Dienst nötig \\
+	\addlinespace
+	Standard-Inspektionsmodus & Flow-based für hohe Geschwindigkeit und geringe Latenz & Inline-Modus \\
+	\addlinespace
+	Protokoll-Unterstützung & Sehr breite, durch FortiGuard Labs definierte und gepflegte Protokolldekodierer & Breite Protokoll-Unterstützung durch Suricata, abhängig von den aktivierten Regeln \\
+	\addlinespace
+	SSL/TLS-Inspektion & Als integrierte Kernfunktion mit Hardware-Beschleunigung verfügbar & Möglich, erfordert aber die manuelle Konfiguration eines separaten Web-Proxys (z.B. Squid) \\
+	\addlinespace
+	Signatur-Erstellung & Erfolgt exklusiv durch das interne Sicherheitsteam der FortiGuard Labs & Erfolgt durch verschiedene Community-Projekte (z.B. Emerging Threats) und kommerzielle Anbieter \\
+	\addlinespace
+	Signatur-Verteilung & Automatisiert über den FortiGuard Distribution Network (FDN) & Manuell oder per Cron-Job aus den vom Administrator ausgewählten Quellen \\
+	\midrule
+	
+	% KATEGORIE III
+	\multicolumn{3}{l}{\textbf{III. Erkennungsmethoden \& Intelligenz}} \\
+	\midrule
+	Primäre Erkennungsmethode & Signaturbasierte Erkennung & Signaturbasierte Erkennung \\
+	\addlinespace
+	Anomalieerkennung & Ja, integrierte heuristische und anomaliebasierte Methoden, insbesondere für DoS-Schutz & Limitiert auf strikte Protokoll-Validierung gemäß den Regeln; keine statistische Baseline-Analyse out-of-the-box \\
+	\addlinespace
+	Zero-Day-Schutz & Limitiert; durch Heuristiken und proaktive Signaturen. Hauptschutz durch schnelles Ausrollen neuer Signaturen & Extrem limitiert; theoretisch durch Protokoll-Anomalien möglich, aber nicht der Fokus \\
+	\addlinespace
+	Regel-Quellen & Exklusiv FortiGuard Labs & Vom Nutzer frei wählbar (z.B. ET Open, ET Pro, etc.) \\
+	\addlinespace
+	Anpassbarkeit der Regeln & Limitiert auf das Aktivieren/Deaktivieren und Ändern der Aktion von bestehenden Signaturen & Vollständig; eigene Regeln können geschrieben und bestehende Regeln angepasst werden \\
+	\midrule
+	
+	% KATEGORIE IV
+	\multicolumn{3}{l}{\textbf{IV. Verwaltung \& Betrieb}} \\
+	\midrule
+	Konfigurations-Interface & Zentrale, webbasierte GUI für alle Funktionen & Zentrale, webbasierte GUI, aber IPS ist ein eigener Konfigurationsbereich \\
+	\addlinespace
+	Konfigurations-Paradigma & Richtlinien-zentriert: IPS wird als Profil auf Firewall-Regeln angewendet & Dienst-zentriert: IPS wird global auf Netzwerkschnittstellen aktiviert \\
+	\addlinespace
+	Reporting \& Logging & Umfassend und integriert, oft mit On-Board-Speicher und Anbindung an FortiAnalyzer & Funktional, aber für tiefgehende Analyse oft die Anbindung an externe Log-Systeme (z.B. Elastic Stack, früher ELK-Stack) nötig \\
+	\addlinespace
+	Update-Prozess & Vollautomatisiert für Signaturen; Firmware-Updates sind manuelle Eingriffe & Updates für das Basissystem, Plugins und Regel-Sets erfolgen getrennt und auf Initiative des Anwenders \\
+	\addlinespace
+	Personalaufwand & Geringerer initialer Konfigurationsaufwand, aber laufende Lizenzverwaltung & Höherer initialer Konfigurations- und laufender Wartungsaufwand (Regel-Tuning) \\
+	\midrule
+	
+	% KATEGORIE V
+	\multicolumn{3}{l}{\textbf{V. Kommerzielles Modell \& Support}} \\
+	\midrule
+	Lizenzkosten (Software) & Ja, obligatorisch für IPS-Updates und andere Sicherheitsdienste & Nein, die Software ist kostenlos \\
+	\addlinespace
+	Hardware-Kosten & Gebunden an den Kauf der FortiGate-Appliance & Abhängig von der vom Nutzer gewählten Standard-Hardware \\
+	\addlinespace
+	Wiederkehrende Kosten & Hoch, durch jährliche Subscriptions für FortiGuard-Dienste und Support & Niedrig; optional für kommerzielle Regel-Sets oder Support-Verträge \\
+	\addlinespace
+	Support-Modell & Offizieller Herstellersupport mit garantierten Reaktionszeiten (SLAs) & Primär über Community-Foren; kommerzieller Support ist optional bei Dritten erhältlich \\
+	\addlinespace
+	Herstellerhaftung & Ja, im Rahmen des Support-Vertrags besteht eine klare Verantwortlichkeit & Nein, die Verantwortung für den Betrieb liegt vollständig beim Nutzer \\
+	\midrule
+	
+	% KATEGORIE VI
+	\multicolumn{3}{l}{\textbf{VI. Performance \& Skalierbarkeit}} \\
+	\midrule
+	Leistungs-Flaschenhals & SPU-Kapazität und Speicherdurchsatz der Appliance & CPU-Leistung, RAM-Geschwindigkeit der gewählten Hardware \\
+	\addlinespace
+	Skalierbarkeit & Vertikale Skalierung durch Kauf eines größeren Modells; horizontale Skalierung durch Clustering & Hohe Flexibilität bei der vertikalen Skalierung durch Hardware-Upgrades; Clustering ist möglich \\
+	
+\end{longtable}
+

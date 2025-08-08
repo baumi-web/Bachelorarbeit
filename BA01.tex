@@ -7,7 +7,12 @@
 \DeclareUnicodeCharacter{0308}{\"}
 \usepackage{enumitem}
 
-
+%für Tabellenformation
+\usepackage{pdflscape}
+\usepackage{longtable} % Für Tabellen, die über eine Seite gehen
+\usepackage{booktabs}  % Für schönere Tabellenlinien
+\usepackage{ragged2e}  % Für besseren Textumbruch in Tabellen
+\usepackage{array}
 
 \usepackage{graphicx}
 
@@ -128,7 +133,11 @@
 	NGFW - Next Generation Firewall\\
 	VPN - Virtual Private Network\\
 	DPI - Deep Packet Inspection\\
-    TAP - Test Access Point
+    TAP - Test Access Point\\
+    NIC - Netzwerkkarte\\
+    RAM - Arbeitsspeicher\\
+    GUI - Grafische Benutzeroberfläche\\
+    
 	
 	\newpage
 	\chapter{Selbstständigkeitserklärung}
@@ -221,6 +230,35 @@ Abgerufen am: 06.07.2025
 SANS Institute\\
 \emph{The Difference between a TAP and a SPAN} \\
 SANS Institutet, 2014 
+
+\bibitem{Fork}
+Deciso B.V.\\
+\emph{About the fork} \\
+\url{https://docs.opnsense.org/history/thefork.html}\\
+Abgerufen am: 01.08.2025
+
+\bibitem{Forti}
+Fortinet Inc.\\
+\emph{FortiGate 70F Series} \\
+\url{https://www.fortinet.com/content/dam/fortinet/assets/data-sheets/fortigate-70f-series.pdf}\\
+Abgerufen am: 01.08.2025
+
+\bibitem{Forti2}
+Fortinet Inc.\\
+\emph{FortiGate 70F Series} \\
+\url{https://www.fortinet.com/de/products/next-generation-firewall}\\
+Abgerufen am: 01.08.2025
+
+\chapter{Abbildungsverzeichnis}
+
+	 \begin{figure}[h!]
+	\centering
+	\includegraphics[width=0.8\textwidth]{Fortinet_Marktanteile.png}
+	\caption{Marktanteil Fortinet}
+	\label{fig:ER-Modell}
+\end{figure}
+https://my.idc.com/getdoc.jsp?containerId=prUS53243925
+
 	\end{thebibliography}
 	\newpage
 	
