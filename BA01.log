@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.3.17)  4 AUG 2025 17:08
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.3.17)  13 AUG 2025 10:35
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1150,27 +1150,104 @@ Overfull \hbox (3.481pt too wide) in paragraph at lines 292--292
 
 [30]
 chapter 3.
-) (./Kapitel3.tex
+
+Underfull \hbox (badness 10000) in paragraph at lines 6--7
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 6--7
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 8--9
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 8--9
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 10--11
+
+ []
+
+
 
 [31
 
 ]
+Underfull \hbox (badness 10000) in paragraph at lines 18--19
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 18--19
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 20--21
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 20--21
+
+ []
+
+
+Overfull \hbox (2.74951pt too wide) in paragraph at lines 22--23
+\OT1/cmr/m/n/12 be-trie-ben. Dem LAN-Segment wur-de der se-pa-ra-te IP-Adressbe
+reich 192.168.101.0/24
+ []
+
+
+Overfull \hbox (0.50371pt too wide) in paragraph at lines 22--23
+\OT1/cmr/m/n/12 zu-ge-teilt. Der LAN-Port der Fi-re-wall agiert hier als Stan-d
+ard-ga-te-way (192.168.101.1)
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 22--23
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 22--23
+
+ []
+
+
+
+[32]
+Overfull \hbox (14.55557pt too wide) in paragraph at lines 24--25
+\OT1/cmr/m/n/12 System im WAN aus-geht und auf einen der vir-tu-el-len Cli-ents
+ im LAN zielt, zwangsl[]aufig
+ []
+
+) (./Kapitel3.tex
+
+[33]
 chapter 4.
 ) (./Kapitel4.tex
 
-[32
+[34
 
 ]
 chapter 5.
 ) (./Kapitel5.tex
 
-[33
+[35
 
 ]
 chapter 6.
 )
 
-[34
+[36
 
 ]
 chapter 7.
@@ -1181,13 +1258,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 127--140
 
 
 
-[35
+[37
 
 ]
 chapter 8.
 
 
-[36
+[38
 
 ]
 Underfull \hbox (badness 10000) in paragraph at lines 161--165
@@ -1232,7 +1309,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 195--199
 
 
 
-[37
+[39
 
 ]
 Underfull \hbox (badness 10000) in paragraph at lines 241--245
@@ -1242,18 +1319,18 @@ assets / data-[]sheets /
 
 
 
-[38]
+[40]
 
-[39]
+[41]
 chapter 9.
-<Fortinet_Marktanteile.png, id=143, 457.71pt x 313.17pt>
+<Fortinet_Marktanteile.png, id=150, 457.71pt x 313.17pt>
 File: Fortinet_Marktanteile.png Graphic file (type png)
 <use Fortinet_Marktanteile.png>
 Package pdftex.def Info: Fortinet_Marktanteile.png  used on input line 256.
 (pdftex.def)             Requested size: 341.43437pt x 233.62013pt.
 
 
-[40
+[42
 
  <./Fortinet_Marktanteile.png>] (./BA01.aux)
  ***********
@@ -1262,10 +1339,10 @@ L3 programming layer <2025-01-18>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 10158 strings out of 473190
- 188288 string characters out of 5719979
+ 10159 strings out of 473190
+ 188303 string characters out of 5719979
  947976 words of memory out of 5000000
- 33284 multiletter control sequences out of 15000+600000
+ 33285 multiletter control sequences out of 15000+600000
  567466 words of font info for 66 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  108i,7n,107p,10926b,412s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -1277,10 +1354,10 @@ e1/public/amsfonts/cm/cmssbx10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/publ
 ic/amsfonts/cm/cmti12.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfon
 ts/cm/cmtt12.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfrm12
 00.pfb>
-Output written on BA01.pdf (43 pages, 227385 bytes).
+Output written on BA01.pdf (45 pages, 232872 bytes).
 PDF statistics:
- 189 PDF objects out of 1000 (max. 8388607)
- 124 compressed objects within 2 object streams
+ 195 PDF objects out of 1000 (max. 8388607)
+ 128 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  6 words of extra memory for PDF output out of 10000 (max. 10000000)
 
