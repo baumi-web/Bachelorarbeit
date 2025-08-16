@@ -15,6 +15,8 @@
 \usepackage{array}
 
 \usepackage{graphicx}
+\usepackage{float}
+\usepackage{caption}
 
 %\usepackage[backend=biber, defernumbers=true]{biblatex} %Imports biblatex package
 \usepackage{csquotes}
@@ -34,7 +36,7 @@
 	breaklines=true
 }
 
-
+%\raggedbottom
 \begin{document}
 	
 	\begin{titlepage}
@@ -259,6 +261,20 @@ Abgerufen am: 01.08.2025
 \end{figure}
 https://my.idc.com/getdoc.jsp?containerId=prUS53243925
 
+
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=0.8\textwidth]{opnsense-hardware.png}
+	\caption{Die Hardwarekomponenten der Firewall.}
+	\label{fig:hardware-apu4} % <-- SCHRITT 1: Marker setzen
+\end{figure}
+
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=0.8\textwidth]{proxmox-hardware.png}
+	\caption{Die Hardwarekomponenten der ProxmoxVE-Umgebung.}
+	\label{fig:hardware-prox} % <-- SCHRITT 1: Marker setzen
+\end{figure}
 	\end{thebibliography}
 	\newpage
 	

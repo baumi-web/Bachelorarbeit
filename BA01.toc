@@ -20,20 +20,20 @@
 \contentsline {chapter}{\numberline {3}Aufbau der Testumgebung}{31}{}%
 \contentsline {section}{\numberline {3.1}Physische und Virtuelle Komponenten}{31}{}%
 \contentsline {subsection}{\numberline {3.1.1}Test-Hardware}{31}{}%
-\contentsline {subsection}{\numberline {3.1.2}Virtualisierungssoftware}{31}{}%
-\contentsline {subsection}{\numberline {3.1.3}Virtuelle Maschinen (VMs)}{32}{}%
-\contentsline {section}{\numberline {3.2}Logische Netzwerkarchitektur}{32}{}%
-\contentsline {section}{\numberline {3.3}Grundkonfiguration der IPS-Systeme}{33}{}%
-\contentsline {subsection}{\numberline {3.3.1}Konfiguration der FortiGate 70F}{33}{}%
-\contentsline {subsection}{\numberline {3.3.2}Konfiguration von OPNsense}{33}{}%
-\contentsline {chapter}{\numberline {4}Testing}{34}{}%
-\contentsline {section}{\numberline {4.1}Definition der Testfälle}{34}{}%
-\contentsline {section}{\numberline {4.2}Durchführen der Tests}{34}{}%
-\contentsline {chapter}{\numberline {5}Auswertung}{35}{}%
-\contentsline {section}{\numberline {5.1}Analyse der Testergebnisse}{35}{}%
-\contentsline {section}{\numberline {5.2}Vergleich der IPS-Systeme}{35}{}%
-\contentsline {chapter}{\numberline {6}Fazit und Ausblick}{36}{}%
-\contentsline {chapter}{\numberline {7}Abkürzungsverzeichnis}{37}{}%
-\contentsline {chapter}{\numberline {8}Selbstständigkeitserklärung}{38}{}%
-\contentsline {chapter}{\numberline {9}Abbildungsverzeichnis}{42}{}%
+\contentsline {subsection}{\numberline {3.1.2}Virtualisierungssoftware}{33}{}%
+\contentsline {subsection}{\numberline {3.1.3}Virtuelle Maschinen (VMs)}{34}{}%
+\contentsline {section}{\numberline {3.2}Logische Netzwerkarchitektur}{34}{}%
+\contentsline {section}{\numberline {3.3}Grundkonfiguration der IPS-Systeme}{35}{}%
+\contentsline {subsection}{\numberline {3.3.1}Konfiguration der FortiGate 70F}{35}{}%
+\contentsline {subsection}{\numberline {3.3.2}Konfiguration von OPNsense}{35}{}%
+\contentsline {chapter}{\numberline {4}Testing}{36}{}%
+\contentsline {section}{\numberline {4.1}Definition der Testfälle}{36}{}%
+\contentsline {section}{\numberline {4.2}Durchführen der Tests}{36}{}%
+\contentsline {chapter}{\numberline {5}Auswertung}{37}{}%
+\contentsline {section}{\numberline {5.1}Analyse der Testergebnisse}{37}{}%
+\contentsline {section}{\numberline {5.2}Vergleich der IPS-Systeme}{37}{}%
+\contentsline {chapter}{\numberline {6}Fazit und Ausblick}{38}{}%
+\contentsline {chapter}{\numberline {7}Abkürzungsverzeichnis}{39}{}%
+\contentsline {chapter}{\numberline {8}Selbstständigkeitserklärung}{40}{}%
+\contentsline {chapter}{\numberline {9}Abbildungsverzeichnis}{44}{}%
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 
