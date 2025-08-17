@@ -42,6 +42,22 @@ Ein zentrales Konzept für den Aufbau der Testumgebung in Proxmox ist dabei die 
 
 \subsection{Virtuelle Maschinen (VMs)}
 
+Die Client-Systeme, die das geschützte LAN-Segment bilden, sowie ein interner Angreifer wurden vollständig innerhalb der Proxmox Virtual Environment virtualisiert. Der grundlegende Prozess zur Erstellung jeder VM umfasst das Hochladen der entsprechenden ISO-Abbilder in den lokalen Speicher des Proxmox-Hosts. Anschließend wurden die virtuellen Maschinen über den Installationsassistenten mit den für ihre jeweilige Rolle und ihr Betriebssystem passenden Hardwareressourcen konfiguriert.\\
+
+\textbf{Ubuntu Desktop:}\\
+Um repräsentative Linux-Clients im geschützten LAN abzubilden, wurden zwei identische VMs mit Ubuntu 24.04 LTS Desktop erstellt. Diese dienen als Ziele für Angriffe und zur Durchführung von Tests wie der Malware-Erkennung oder der Überprüfung von Filterregeln. Beiden VMs wurden jeweils 4 CPU-Kerne, 4 GiB Arbeitsspeicher und eine 50 GiB Festplatte zugewiesen. Um sie im geschützten LAN-Segment zu platzieren, wurden beide VMs mit ihren virtuellen Netzwerkkarten an die interne Bridge \textit{vmbr1} angebunden.(siehe Abbildung~\ref{fig:ubuntu-hardware})\\
+
+\textbf{Kali-Linux:}\\
+Zur Simulation eines internen Angriffs wurde eine VM mit Kali Linux aufgesetzt, die ein kompromittiertes Endgerät im LAN repräsentiert. Der VM wurden 4 CPU-Kerne, 4 GiB Arbeitsspeicher und eine 50 GiB Festplatte zugewiesen. Entscheidend für diesen Testfall wurde die Netzwerkkarte der VM, identisch zu den Client-Systemen, an die interne Bridge vmbr1 angebunden. (siehe Abbildung~\ref{fig:kali-hardware})\\
+Dieser Aufbau eines flachen Netzwerks dient der praktischen Demonstration der Grenzen des reinen Perimeterschutzes. Wie erwartet, kann die physische Firewall den direkten Verkehr zwischen den VMs auf derselben Bridge nicht einsehen oder blockieren. Ein erfolgreicher interner Exploit demonstriert somit die kritische Schutzlücke, die bei alleiniger Konzentration auf den Perimeterschutz entsteht und unterstreicht die Notwendigkeit weiterführender Sicherheitskonzepte wie Zero-Trust und interner Netzwerksegmentierung.\\
+
+\textbf{Windows 11:}\\
+Zur Simulation einer typischen Workstation in einem Unternehmensumfeld wurde eine VM mit Microsoft Windows 11 Enterprise aufgesetzt. Entsprechend den höheren Anforderungen des Betriebssystems wurden dieser VM 4 CPU-Kerne, 8 GiB Arbeitsspeicher und eine 70 GiB Festplatte zugewiesen. Auch diese VM wurde an die Bridge \textit{vmbr1} angebunden, um sie im LAN zu positionieren.(siehe Abbildung~\ref{fig:win11-hardware})\\
+
+\textbf{Besonderheit bei der Windows-Installation:}\\
+Aufgrund der spezifischen Anforderungen von Windows 11 mussten in den Systemeinstellungen der VM das BIOS auf OVMF (UEFI) umgestellt und ein virtuelles Trusted Platform Module (TPM) 2.0 sowie eine EFI-Disk hinzugefügt werden.
+ Im Gegensatz zu den Linux-basierten Systemen trat bei der Installation zudem ein Problem auf, da der Windows-Installer standardmäßig keine Treiber für die paravirtualisierte VirtIO-Hardware enthält. Dadurch konnte im Partitionierungs-Schritt der Installation keine Festplatte erkannt werden. Um dieses Problem zu lösen, musste die virtio-win.iso-Datei mit den Gast-Treibern heruntergeladen und der VM als zweites, virtuelles CD/DVD-Laufwerk zugewiesen werden. Im Windows-Setup konnten dann die Speichertreiber aus dem Verzeichnis \path{\viostor\w11\amd} manuell geladen werden, woraufhin die virtuelle Festplatte erkannt wurde und die Installation fortgesetzt und abgeschlossen werden konnte.
+
 \section{Logische Netzwerkarchitektur}
 
 Für die Durchführung der Tests wurde eine logische Netzwerkarchitektur entworfen, die eine realitätsnahe Topologie nachbildet. Das grundlegende Design basiert auf einer klaren Segmentierung in zwei separate Netzwerkzonen: ein unsicheres Wide Area Network (WAN), das das Internet simuliert, und ein durch eine Firewall geschütztes Local Area Network (LAN), das das interne Unternehmensnetzwerk darstellt. Die zu testende physische Firewall fungiert als zentraler Kopplungspunkt und einziges Gateway zwischen diesen beiden Zonen.\\

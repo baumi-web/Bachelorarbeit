@@ -22,18 +22,18 @@
 \contentsline {subsection}{\numberline {3.1.1}Test-Hardware}{31}{}%
 \contentsline {subsection}{\numberline {3.1.2}Virtualisierungssoftware}{33}{}%
 \contentsline {subsection}{\numberline {3.1.3}Virtuelle Maschinen (VMs)}{34}{}%
-\contentsline {section}{\numberline {3.2}Logische Netzwerkarchitektur}{34}{}%
-\contentsline {section}{\numberline {3.3}Grundkonfiguration der IPS-Systeme}{35}{}%
-\contentsline {subsection}{\numberline {3.3.1}Konfiguration der FortiGate 70F}{35}{}%
-\contentsline {subsection}{\numberline {3.3.2}Konfiguration von OPNsense}{35}{}%
-\contentsline {chapter}{\numberline {4}Testing}{36}{}%
-\contentsline {section}{\numberline {4.1}Definition der Testfälle}{36}{}%
-\contentsline {section}{\numberline {4.2}Durchführen der Tests}{36}{}%
-\contentsline {chapter}{\numberline {5}Auswertung}{37}{}%
-\contentsline {section}{\numberline {5.1}Analyse der Testergebnisse}{37}{}%
-\contentsline {section}{\numberline {5.2}Vergleich der IPS-Systeme}{37}{}%
-\contentsline {chapter}{\numberline {6}Fazit und Ausblick}{38}{}%
-\contentsline {chapter}{\numberline {7}Abkürzungsverzeichnis}{39}{}%
-\contentsline {chapter}{\numberline {8}Selbstständigkeitserklärung}{40}{}%
-\contentsline {chapter}{\numberline {9}Abbildungsverzeichnis}{44}{}%
+\contentsline {section}{\numberline {3.2}Logische Netzwerkarchitektur}{35}{}%
+\contentsline {section}{\numberline {3.3}Grundkonfiguration der IPS-Systeme}{36}{}%
+\contentsline {subsection}{\numberline {3.3.1}Konfiguration der FortiGate 70F}{36}{}%
+\contentsline {subsection}{\numberline {3.3.2}Konfiguration von OPNsense}{36}{}%
+\contentsline {chapter}{\numberline {4}Testing}{37}{}%
+\contentsline {section}{\numberline {4.1}Definition der Testfälle}{37}{}%
+\contentsline {section}{\numberline {4.2}Durchführen der Tests}{37}{}%
+\contentsline {chapter}{\numberline {5}Auswertung}{38}{}%
+\contentsline {section}{\numberline {5.1}Analyse der Testergebnisse}{38}{}%
+\contentsline {section}{\numberline {5.2}Vergleich der IPS-Systeme}{38}{}%
+\contentsline {chapter}{\numberline {6}Fazit und Ausblick}{39}{}%
+\contentsline {chapter}{\numberline {7}Abkürzungsverzeichnis}{40}{}%
+\contentsline {chapter}{\numberline {8}Selbstständigkeitserklärung}{41}{}%
+\contentsline {chapter}{\numberline {9}Abbildungsverzeichnis}{45}{}%
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 

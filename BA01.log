@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.3.17)  16 AUG 2025 16:39
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.3.17)  17 AUG 2025 15:15
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1283,59 +1283,81 @@ Underfull \hbox (badness 10000) in paragraph at lines 40--41
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 47--48
+Underfull \hbox (badness 10000) in paragraph at lines 45--46
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 49--50
+Underfull \hbox (badness 10000) in paragraph at lines 47--49
 
  []
 
 
 
 [34]
-Overfull \hbox (2.74951pt too wide) in paragraph at lines 51--52
+Underfull \hbox (badness 10000) in paragraph at lines 50--53
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 54--56
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 63--64
+
+ []
+
+
+
+[35]
+Underfull \hbox (badness 10000) in paragraph at lines 65--66
+
+ []
+
+
+Overfull \hbox (2.74951pt too wide) in paragraph at lines 67--68
 \OT1/cmr/m/n/12 be-trie-ben. Dem LAN-Segment wur-de der se-pa-ra-te IP-Adressbe
 reich 192.168.101.0/24
  []
 
 
-Overfull \hbox (0.50371pt too wide) in paragraph at lines 51--52
+Overfull \hbox (0.50371pt too wide) in paragraph at lines 67--68
 \OT1/cmr/m/n/12 zu-ge-teilt. Der LAN-Port der Fi-re-wall agiert hier als Stan-d
 ard-ga-te-way (192.168.101.1)
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 51--52
+Underfull \hbox (badness 10000) in paragraph at lines 67--68
 
  []
 
 
-Overfull \hbox (14.55557pt too wide) in paragraph at lines 53--54
+Overfull \hbox (14.55557pt too wide) in paragraph at lines 69--70
 \OT1/cmr/m/n/12 System im WAN aus-geht und auf einen der vir-tu-el-len Cli-ents
  im LAN zielt, zwangsl[]aufig
  []
 
 ) (./Kapitel3.tex
 
-[35]
+[36]
 chapter 4.
 ) (./Kapitel4.tex
 
-[36
+[37
 
 ]
 chapter 5.
 ) (./Kapitel5.tex
 
-[37
+[38
 
 ]
 chapter 6.
 )
 
-[38
+[39
 
 ]
 chapter 7.
@@ -1346,13 +1368,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 129--142
 
 
 
-[39
+[40
 
 ]
 chapter 8.
 
 
-[40
+[41
 
 ]
 Underfull \hbox (badness 10000) in paragraph at lines 163--167
@@ -1397,7 +1419,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 197--201
 
 
 
-[41
+[42
 
 ]
 Underfull \hbox (badness 10000) in paragraph at lines 243--247
@@ -1407,42 +1429,60 @@ assets / data-[]sheets /
 
 
 
-[42]
-
 [43]
+
+[44]
 chapter 9.
-<Fortinet_Marktanteile.png, id=156, 457.71pt x 313.17pt>
+<Fortinet_Marktanteile.png, id=159, 457.71pt x 313.17pt>
 File: Fortinet_Marktanteile.png Graphic file (type png)
 <use Fortinet_Marktanteile.png>
 Package pdftex.def Info: Fortinet_Marktanteile.png  used on input line 258.
 (pdftex.def)             Requested size: 341.43437pt x 233.62013pt.
-<opnsense-hardware.png, id=158, 445.665pt x 417.05812pt>
+<opnsense-hardware.png, id=161, 445.665pt x 417.05812pt>
 File: opnsense-hardware.png Graphic file (type png)
 <use opnsense-hardware.png>
 Package pdftex.def Info: opnsense-hardware.png  used on input line 267.
 (pdftex.def)             Requested size: 341.43437pt x 319.51933pt.
-<proxmox-hardware.png, id=159, 356.33125pt x 219.82124pt>
+<proxmox-hardware.png, id=162, 356.33125pt x 219.82124pt>
 File: proxmox-hardware.png Graphic file (type png)
 <use proxmox-hardware.png>
 Package pdftex.def Info: proxmox-hardware.png  used on input line 274.
 (pdftex.def)             Requested size: 341.43437pt x 210.64024pt.
+<ubuntu01-hardware.png, id=163, 612.03656pt x 297.36093pt>
+File: ubuntu01-hardware.png Graphic file (type png)
+<use ubuntu01-hardware.png>
+Package pdftex.def Info: ubuntu01-hardware.png  used on input line 281.
+(pdftex.def)             Requested size: 341.43437pt x 165.88574pt.
+<kalivm-hardware.png, id=164, 593.21625pt x 288.3272pt>
+File: kalivm-hardware.png Graphic file (type png)
+<use kalivm-hardware.png>
+Package pdftex.def Info: kalivm-hardware.png  used on input line 288.
+(pdftex.def)             Requested size: 341.43437pt x 165.95842pt.
+<win11-hardware.png, id=165, 913.91437pt x 293.59688pt>
+File: win11-hardware.png Graphic file (type png)
+<use win11-hardware.png>
+Package pdftex.def Info: win11-hardware.png  used on input line 295.
+(pdftex.def)             Requested size: 341.43437pt x 109.6864pt.
 
 
-[44
+[45
 
  <./Fortinet_Marktanteile.png>]
 
-[45 <./opnsense-hardware.png> <./proxmox-hardware.png>] (./BA01.aux)
+[46 <./opnsense-hardware.png> <./proxmox-hardware.png>]
+
+[47 <./ubuntu01-hardware.png> <./kalivm-hardware.png> <./win11-hardware.png>]
+(./BA01.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 11626 strings out of 473190
- 217100 string characters out of 5719979
+ 11650 strings out of 473190
+ 217710 string characters out of 5719979
  973687 words of memory out of 5000000
- 34735 multiletter control sequences out of 15000+600000
+ 34759 multiletter control sequences out of 15000+600000
  567466 words of font info for 66 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  108i,8n,107p,10926b,517s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -1454,10 +1494,10 @@ e1/public/amsfonts/cm/cmssbx10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/publ
 ic/amsfonts/cm/cmti12.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfon
 ts/cm/cmtt12.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfrm12
 00.pfb>
-Output written on BA01.pdf (48 pages, 270460 bytes).
+Output written on BA01.pdf (50 pages, 354976 bytes).
 PDF statistics:
- 207 PDF objects out of 1000 (max. 8388607)
- 134 compressed objects within 2 object streams
+ 220 PDF objects out of 1000 (max. 8388607)
+ 139 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 16 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 31 words of extra memory for PDF output out of 10000 (max. 10000000)
 
