@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.3.17)  22 AUG 2025 17:02
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.3.17)  22 AUG 2025 17:08
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1523,58 +1523,63 @@ assets / data-[]sheets /
 
 
 [48]
+Underfull \hbox (badness 10000) in paragraph at lines 256--260
+\OT1/cmtt/m/n/12 https : / / community . fortinet . com / t5 / FortiGate /
+ []
+
+
 
 [49]
 chapter 9.
 <Fortinet_Marktanteile.png, id=176, 457.71pt x 313.17pt>
 File: Fortinet_Marktanteile.png Graphic file (type png)
 <use Fortinet_Marktanteile.png>
-Package pdftex.def Info: Fortinet_Marktanteile.png  used on input line 264.
+Package pdftex.def Info: Fortinet_Marktanteile.png  used on input line 272.
 (pdftex.def)             Requested size: 341.43437pt x 233.62013pt.
 <opnsense-hardware.png, id=178, 445.665pt x 417.05812pt>
 File: opnsense-hardware.png Graphic file (type png)
 <use opnsense-hardware.png>
-Package pdftex.def Info: opnsense-hardware.png  used on input line 273.
+Package pdftex.def Info: opnsense-hardware.png  used on input line 281.
 (pdftex.def)             Requested size: 341.43437pt x 319.51933pt.
 <proxmox-hardware.png, id=179, 356.33125pt x 219.82124pt>
 File: proxmox-hardware.png Graphic file (type png)
 <use proxmox-hardware.png>
-Package pdftex.def Info: proxmox-hardware.png  used on input line 280.
+Package pdftex.def Info: proxmox-hardware.png  used on input line 288.
 (pdftex.def)             Requested size: 341.43437pt x 210.64024pt.
 <ubuntu01-hardware.png, id=180, 612.03656pt x 297.36093pt>
 File: ubuntu01-hardware.png Graphic file (type png)
 <use ubuntu01-hardware.png>
-Package pdftex.def Info: ubuntu01-hardware.png  used on input line 287.
+Package pdftex.def Info: ubuntu01-hardware.png  used on input line 295.
 (pdftex.def)             Requested size: 341.43437pt x 165.88574pt.
 <kalivm-hardware.png, id=181, 593.21625pt x 288.3272pt>
 File: kalivm-hardware.png Graphic file (type png)
 <use kalivm-hardware.png>
-Package pdftex.def Info: kalivm-hardware.png  used on input line 294.
+Package pdftex.def Info: kalivm-hardware.png  used on input line 302.
 (pdftex.def)             Requested size: 341.43437pt x 165.95842pt.
 <win11-hardware.png, id=182, 913.91437pt x 293.59688pt>
 File: win11-hardware.png Graphic file (type png)
 <use win11-hardware.png>
-Package pdftex.def Info: win11-hardware.png  used on input line 301.
+Package pdftex.def Info: win11-hardware.png  used on input line 309.
 (pdftex.def)             Requested size: 341.43437pt x 109.6864pt.
 <IPSopnsense.png, id=183, 539.76656pt x 484.05844pt>
 File: IPSopnsense.png Graphic file (type png)
 <use IPSopnsense.png>
-Package pdftex.def Info: IPSopnsense.png  used on input line 308.
+Package pdftex.def Info: IPSopnsense.png  used on input line 316.
 (pdftex.def)             Requested size: 341.43437pt x 306.1993pt.
 <squidproxy.png, id=184, 584.1825pt x 419.31656pt>
 File: squidproxy.png Graphic file (type png)
 <use squidproxy.png>
-Package pdftex.def Info: squidproxy.png  used on input line 315.
+Package pdftex.def Info: squidproxy.png  used on input line 323.
 (pdftex.def)             Requested size: 341.43437pt x 245.08485pt.
 <proxyNAT.png, id=185, 761.84625pt x 129.48375pt>
 File: proxyNAT.png Graphic file (type png)
 <use proxyNAT.png>
-Package pdftex.def Info: proxyNAT.png  used on input line 322.
+Package pdftex.def Info: proxyNAT.png  used on input line 330.
 (pdftex.def)             Requested size: 341.43437pt x 58.03004pt.
 <squidproxy-log.png, id=186, 993.7125pt x 852.18375pt>
 File: squidproxy-log.png Graphic file (type png)
 <use squidproxy-log.png>
-Package pdftex.def Info: squidproxy-log.png  used on input line 329.
+Package pdftex.def Info: squidproxy-log.png  used on input line 337.
 (pdftex.def)             Requested size: 341.43437pt x 292.8074pt.
 
 
@@ -1602,10 +1607,10 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 11684 strings out of 473190
- 218392 string characters out of 5719979
+ 11685 strings out of 473190
+ 218401 string characters out of 5719979
  973687 words of memory out of 5000000
- 34793 multiletter control sequences out of 15000+600000
+ 34794 multiletter control sequences out of 15000+600000
  567466 words of font info for 66 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  108i,8n,107p,10926b,517s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -1617,7 +1622,7 @@ e1/public/amsfonts/cm/cmssbx10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/publ
 ic/amsfonts/cm/cmti12.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfon
 ts/cm/cmtt12.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfrm12
 00.pfb>
-Output written on BA01.pdf (57 pages, 697898 bytes).
+Output written on BA01.pdf (57 pages, 699022 bytes).
 PDF statistics:
  250 PDF objects out of 1000 (max. 8388607)
  154 compressed objects within 2 object streams
