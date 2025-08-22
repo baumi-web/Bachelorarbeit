@@ -1,3 +1,45 @@
 \chapter{Testing}
 \section{Definition der Testfälle}
+Um die Schutzwirkung und die Erkennungsfähigkeiten der beiden IPS-Lösungen – FortiGate VM und OPNsense – systematisch zu vergleichen, werden praxisnahe Testfälle aus verschiedenen Angriffskategorien definiert. Diese Kategorien spiegeln die in den theoretischen Grundlagen (Kapitel 2.1) beschriebene Bedrohungslage wider und zielen darauf ab, unterschiedliche Erkennungsmechanismen der Systeme zu prüfen und so ein breites Testbild aufzustellen.
+
+\subsection{Netzwerk-Scans (Reconnaissance)}
+
+In dieser Kategorie wird die Fähigkeit der IPS-Systeme getestet, verschiedene Methoden der Netzwerkaufklärung zu erkennen und zu blockieren. Solche Scans stellen oft den ersten Schritt eines gezielten Angriffs dar, weshalb ihre Erkennung fundamental für eine proaktive Verteidigung ist. Als Werkzeug kommt hierbei der Portscanner Nmap zum Einsatz, dessen verschiedene Modi gezielt unterschiedliche Erkennungsmechanismen der IPS-Systeme herausfordern sollen.\\
+
+\begin{itemize}
+	\item \textbf{TCP-SYN-Scan (nmap -sS)}\\
+	Der Parameter -sS steht für ''SYN-Scan'' / ''Stealth-Scan''. Anstatt einen vollständigen TCP-Handshake (SYN -> SYN/ACK -> ACK) durchzuführen, sendet Nmap nur das initiale SYN-Paket. Antwortet der Zielport mit einem SYN/ACK, gilt er als offen. Antwortet er jedoch mit einem RST, ist der Port geschlossen. Der Angreifer bricht den Handshake nach dem SYN/ACK durch Senden eines RST-Pakets ab und hinterlässt so weniger Spuren in den Anwendungslogs des Zielsystems.\\
+	Dieser Scan wurde ausgewählt, da er die Standardmethode für schnelle und effiziente Portscans ist. Das Ziel ist es zu prüfen, ob das IPS diese weitverbreitete Technik anhand der hohen Anzahl von Verbindungsversuchen von einer Quelle zu vielen verschiedenen Ports erkennt und als bösartige Aufklärungsaktivität einstuft\\
+	
+	\item \textbf{Xmas-Scan (nmap -sX)}\\
+	 Der Parameter -sX führt einen sogenannten ''Xmas-Scan'' durch. Dabei werden TCP-Pakete versendet, bei denen die Flags FIN, PSH und URG gleichzeitig gesetzt sind. Der Name entstand wegen der unüblichen Flag-Kombination, die bei Überwachung in beispielsweise Wireshark oder tcpdump an eine bunte Weihnachtsbaumbeleuchtung erinnert. Laut RFC 793 sollten geschlossene Ports auf ein solches Paket mit einem RST-Paket antworten, während offene Ports es ignorieren.\cite{TCP}
+	 Da diese Pakete gegen die TCP-Protokollspezifikation verstoßen, sollten sie von einer fortschrittlichen DPI-Engine als abnormal oder bösartig erkannt werden, selbst wenn keine spezifische Angriffs-Signatur existiert.\\
+
+	\item \textbf{Fragmentierter Scan (nmap -f)}\\
+	Der Parameter -f weist Nmap an, die TCP-Header der Scan-Pakete in kleinere Fragmente (typischerweise 8-Byte-Segmente) aufzuteilen. Diese Technik zielt darauf ab, die Erkennungs-Engine eines Sicherheitssystems zu umgehen. Simple Paketfilter oder IPS-Systeme könnten Schwierigkeiten haben, alle Fragmente korrekt und in Echtzeit zusammenzusetzen, um die eigentliche Absicht zu erkennen.
+	Dieser Test prüft gezielt die Effizienz der Paket-Reassemblierungs-Funktion der DPI-Engine. Ein robustes IPS muss in der Lage sein, fragmentierte Angriffe zu rekonstruieren und als Scan zu identifizieren, anstatt die Fragmente einzeln als harmlos durchzulassen.\\
+	
+	\item \textbf{Scan mit Daten (nmap --datalength 25)}\\
+	Der Parameter \verb|--data-length 25| hängt an die gesendeten Scan-Pakete eine definierte Anzahl (hier 25 Bytes) an zufälligen Daten an. Standard-Portscan-Pakete enthalten normalerweise keine Nutzlast.
+	Dieser Test wurde ausgewählt, um zu prüfen, ob das IPS auf Anomalien in der Paketstruktur reagiert. Durch das Hinzufügen einer unerwarteten Nutzlast wird der Fingerprint des Scans verändert. Es wird getestet, ob sich das IPS dadurch täuschen lässt oder ob es die Pakete dennoch korrekt als Teil eines Scans klassifiziert.\\
+	
+	\item \textbf{Decoy-Scan (nmap -D RND:10)}\\
+	Der Parameter -D aktiviert einen ''Decoy-Scan'', der die Herkunft des Scans verschleiern soll. \verb|RND:10| weist Nmap an, neben der echten IP-Adresse des Angreifers zehn weitere, zufällig generierte Quell-IP-Adressen in die Scan-Pakete einzutragen. Für das Zielsystem sieht es so aus, als würde der Scan von einer ganzen Gruppe von Rechnern ausgehen. Es wird geprüft, ob das System trotz der vielen gefälschten Quell-IP-Adressen in der Lage ist, den wahren Ursprung des Angriffs zu identifizieren und gezielt nur die reale IP-Adresse des Angreifers zu blockieren, anstatt auf die Köder hereinzufallen.\\
+	
+	\item \textbf{Schwachstellen Scan (nmap --script vuln)}\\
+	Der Befehl \verb|--script vuln|  weist die Nmap Scripting Engine (NSE) an, eine Sammlung von Skripten auszuführen, die aktiv versuchen bekannte Schwachstellen auf dem Zielsystem zu finden und teilweise auszunutzen. Dabei werden spezifische Anfragen gesendet, die charakteristisch für bestimmte Exploits sind.  Er wurde ausgewählt, um die signaturbasierte Erkennung des IPS direkt zu prüfen. Es wird verifiziert, ob das IPS die Anfragen der Nmap-Skripte anhand bekannter Angriffsmuster erkennt und proaktiv blockiert, bevor eine Schwachstelle bestätigt werden kann.
+\end{itemize}
+
+\subsection{Denial-of-Service (DoS)-Angriffe}
+In diesem Testfall wird ein Angriff auf der Anwendungsebene (Layer 7) simuliert, der darauf abzielt, die Ressourcen eines Webservers zu erschöpfen und ihn so für legitime Anfragen unerreichbar zu machen.\\
+\begin{itemize}
+\item \textbf{GoldenEye DoS Angriff}\\
+ Das Tool GoldenEye erzeugt eine hohe Last auf einem Webserver, indem es eine Flut von scheinbar legitimen HTTP-Anfragen mit ständig wechselnden Parametern sendet. Dies macht eine Abwehr auf reiner Netzwerkebene schwierig, da die Anfragen einzeln unauffällig wirken können.\\
+Dieser Test wurde ausgewählt, um zu prüfen, ob das IPS in der Lage ist, einen Angriff auf der Anwendungsebene zu erkennen. Es soll verifiziert werden, ob das System das anomale Verhalten (hohe Frequenz von Anfragen von einer Quelle) als DoS-Angriff einstuft und die Quell-IP blockiert.
+\end{itemize}
+
+\subsection{Exploits (Ausnutzung von Schwachstellen)}
+In dieser Kategorie wird die Kernkompetenz eines IPS geprüft: die Erkennung und Blockade von konkreten Exploits, die bekannte Software-Schwachstellen ausnutzen, um unautorisierten Zugriff oder Kontrolle über ein System zu erlangen.
+
+
 \section{Durchführen der Tests}

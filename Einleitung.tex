@@ -16,7 +16,7 @@ Zusätzlich zu diesen externen Bedrohungen hat sich die Erkenntnis durchgesetzt,
 
 Die vorliegende Arbeit positioniert sich exakt in diesem Spannungsfeld. Sie zielt darauf ab, den in der Praxis relevanten Entscheidungsprozess zwischen einem kommerziellen und einem Open-Source-System durch einen systematischen, technischen und praktischen Vergleich zu objektivieren.
 \\\\
-Als Repräsentant für die kommerzielle Welt wird eine FortiGate 70F der Firma Fortinet herangezogen. Fortinet ist einer der weltweiten Marktführer im Bereich der Netzwerksicherheit. Die FortiGate-Serie integriert Firewall-, VPN-, und IPS-Funktionen in einer einzigen Hardware-Appliance, die durch den Einsatz spezialisierter Security Processors (SPs) eine hohe Performance verspricht. Die 
+Als Repräsentant für die kommerzielle Welt wird eine virtuelle Appliance (FortiGate VM) der Firma Fortinet herangezogen. Fortinet ist einer der weltweiten Marktführer im Bereich der Netzwerksicherheit. Die FortiGate-Produktfamilie, die auf dem Betriebssystem FortiOS basiert, integriert Firewall-, VPN- und IPS-Funktionen in einer einzigen Lösung. Während physische FortiGate-Appliances ihre hohe Performance oft durch den Einsatz spezialisierter Security Processors (SPs) erreichen, wird in dieser Arbeit die Flexibilität und Skalierbarkeit der virtualisierten Variante untersucht.
 \\\\
 Als Gegenstück wird OPNsense untersucht, eine weit verbreitete und aktiv weiterentwickelte Open-Source-Firewall-Distribution, die auf dem robusten Betriebssystem FreeBSD basiert. OPNsense kann auf Standard-Hardware betrieben werden und integriert für die IPS-Funktionalität das leistungsfähige Open-Source-Engine Suricata. Suricata ist ein hochperformantes IDS/IPS, das von der Open Information Security Foundation (OISF) entwickelt wird. Im Gegensatz zum kommerziellen Ansatz ist der Anwender hier selbst dafür verantwortlich, die Hardware zu dimensionieren und die Regelwerke (Signaturen) aus verschiedenen freien oder auch kostenpflichtigen Quellen zu beziehen und zu verwalten.
 \\\\
@@ -36,9 +36,7 @@ Worin liegen die konzeptionellen und architektonischen Unterschiede bei der Impl
 
 Wie effektiv erkennen und blockieren beide Systeme eine Reihe definierter, praxisnaher Angriffe aus den Kategorien Malware, Exploits und Denial-of-Service in einer kontrollierten Testumgebung?\\
 
-Welche qualitativen Unterschiede bestehen hinsichtlich des Konfigurationsaufwands, der Benutzerfreundlichkeit der Verwaltungsoberflächen und der Qualität der Protokollierungs- und Reporting-Funktionen?\\
-
-Welche quantifizierbaren Auswirkungen hat die Aktivierung der IPS-Funktionen auf den Netzwerkdurchsatz und die Latenz bei beiden Systemen?
+Welche qualitativen Unterschiede bestehen hinsichtlich des Konfigurationsaufwands, der Benutzerfreundlichkeit der Verwaltungsoberflächen und der Qualität der Protokollierungs- und Reporting-Funktionen?
 
 \section{Aufbau der Arbeit}
 

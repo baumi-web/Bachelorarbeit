@@ -132,20 +132,19 @@ Nachdem die vorangegangenen Kapitel die theoretischen Grundlagen der Bedrohungsl
 Diese beiden Systeme wurden gezielt gewählt, da sie in ihren jeweiligen Segmenten eine hohe Marktrelevanz besitzen und fundamental unterschiedliche Philosophien in Bezug auf Architektur, Lizenzmodell und Verwaltung verkörpern. Um eine fundierte Vergleichsbasis zu schaffen, werden die beiden Systeme zunächst in separaten Unterkapiteln detailliert vorgestellt. Dabei wird auf ihre jeweilige Architektur, die technische Implementierung der IPS-Funktionalität und das zugrundeliegende Betriebsmodell eingegangen. Abschließend fasst eine synoptische Gegenüberstellung die zentralen Unterschiede tabellarisch zusammen, um eine klare Ausgangslage für die Konzeption der Testumgebung im nachfolgenden Kapitel zu schaffen.
 
 \subsection{Der kommerzielle Vertreter: FortiGate}
-Als kommerzieller Vertreter für den Systemvergleich wird die FortiGate 70F des Herstellers Fortinet untersucht. Fortinet ist ein 1999 gegründetes, US-amerikanisches Unternehmen und zählt zu den globalen Marktführern im Bereich der Cybersicherheit. Die Unternehmensphilosophie manifestiert sich in der "Fortinet Security Fabric", einer Architektur, die darauf abzielt, eine breite, integrierte und automatisierte Sicherheit über die gesamte digitale Infrastruktur eines Unternehmens zu spannen. Das Kernstück dieser Architektur und das "Flaggschiff-Produkt" des Unternehmens ist die FortiGate Next-Generation Firewall (NGFW).\\\\
+Als kommerzieller Vertreter für den Systemvergleich wird die 
+FortiGate VM des Herstellers Fortinet untersucht. Fortinet ist ein 1999 gegründetes, US-amerikanisches Unternehmen und zählt zu den globalen Marktführern im Bereich der Cybersicherheit. Die Unternehmensphilosophie manifestiert sich in der ''Fortinet Security Fabric'', einer Architektur, die darauf abzielt, eine breite, integrierte und automatisierte Sicherheit über die gesamte digitale Infrastruktur eines Unternehmens zu spannen. Das Kernstück dieser Architektur und das ''Flaggschiff-Produkt'' des Unternehmens ist die FortiGate Next-Generation Firewall (NGFW), die auf dem Betriebssystem FortiOS basiert. \\\\
 
 \textbf{Produktphilosophie und Architektur:}\\
-Die grundlegende Philosophie hinter der FortiGate-Plattform ist die der Konsolidierung von Sicherheitsfunktionen. Die Plattform basiert auf dem Prinzip des Unified Threat Management (UTM), dessen Ziel es ist, eine Vielzahl von ehemals separaten Sicherheitslösungen in einem einzigen Gerät zu vereinen. Eine FortiGate ist somit weit mehr als eine klassische Firewall. Sie integriert Funktionen wie Stateful Packet Inspection, VPN-Gateway, Intrusion Prevention (IPS), Antivirus-Scanning, Web- und DNS-Filterung sowie Application Control. All diese Sicherheitsdienste werden durch ein einziges, proprietäres Betriebssystem namens FortiOS gesteuert und verwaltet. Da alle Sicherheits-Engines von einem einzigen Hersteller entwickelt und in ein Betriebssystem integriert werden, wird eine nahtlose Kompatibilität und eine optimierte Performance angestrebt.\cite{Forti}\\\\
+Die grundlegende Philosophie hinter der FortiGate-Plattform ist die der Konsolidierung von Sicherheitsfunktionen. Die Plattform basiert auf dem Prinzip des Unified Threat Management (UTM), dessen Ziel es ist, eine Vielzahl von ehemals separaten Sicherheitslösungen in einem einzigen System zu vereinen. Eine FortiGate integriert somit weit mehr als eine klassische Firewall. Sie vereint Funktionen wie Stateful Packet Inspection, VPN-Gateway, Intrusion Prevention (IPS), Antivirus-Scanning, Web- und DNS-Filterung sowie Application Control. All diese Sicherheitsdienste werden durch ein einziges, proprietäres Betriebssystem namens FortiOS gesteuert und verwaltet. \cite{Forti}\\\\
 
-\textbf{Hardware-Architektur: Spezialisierte ASICs:}\\
-Ein fundamentaler architektonischer Aspekt der FortiGate-Systeme ist der Einsatz von spezialisierter Hardware. FortiGate-Systeme sind geschlossene Appliances, deren Software untrennbar mit der Hardware verbunden ist. Ein zentrales Merkmal der FortiGate 70F und anderer Modelle ist der Einsatz von anwendungsspezifischen integrierten Schaltungen (ASICs), die unter Fortinet als Security Processing Units (SPUs) bezeichnet werden. Anstatt alle sicherheitsrelevanten Berechnungen von der Haupt-CPU des Systems durchführen zu lassen, werden rechenintensive Aufgaben an diese Prozessoren ausgelagert (Hardware-Offloading). Dies betrifft insbesondere:\\
-*Network Processors (NPs): Beschleunigung die grundlegenden Paketverarbeitungen auf den Schichten 3 und 4 (Firewalling, NAT).\\
-*Content Processors (CPs): Sind für die Inhaltsanalyse zuständig und beschleunigen rechenintensive Prozesse wie die Deep Packet Inspection (DPI) für das IPS, Viren-Analyse und die Entschlüsselung von SSL/TLS-Verkehr.\\
+\textbf{Hardware-Architektur vs. Virtuelle Umgebung}\\
+Ein fundamentaler architektonischer Aspekt der physischen FortiGate-Systeme ist der Einsatz von spezialisierter Hardware in Form von anwendungsspezifischen integrierten Schaltungen (ASICs), die unter Fortinet als Security Processing Units (SPUs) bezeichnet werden. Diese Prozessoren beschleunigen rechenintensive Aufgaben wie die Paketverarbeitung und die Inhaltsanalyse (Hardware-Offloading). \\
 
-Dadurch soll sichergestellt werden, dass die Aktivierung von Sicherheitsfunktionen wie dem IPS nur einen minimalen Einfluss auf den Netzwerkdurchsatz und die Latenz hat.\cite{Forti2}\\\\
+In der für diese Arbeit verwendeten FortiGate VM entfällt diese spezialisierte Hardware. Stattdessen werden alle sicherheitsrelevanten Berechnungen von der Standard-CPU des Virtualisierungs-Hosts ausgeführt. FortiOS ist darauf optimiert, diese Aufgaben effizient auf Standard-x86-Architekturen zu verteilen, um auch in einer virtualisierten Umgebung eine hohe Performance zu gewährleisten.\cite{Forti2}\\\\
 
 \textbf{Implementierung des IPS:}\\
-Die IPS-Funktionalität ist in der FortiGate kein globaler Dienst, sondern ein tief in die Verarbeitungslogik von Firewall-Richtlinien (Policies) integrierter Mechanismus. Diese richtlinienbasierte Architektur ist der Schlüssel zur granularen und performanten Anwendung von Sicherheitsmaßnahmen. Anstatt den gesamten Netzwerkverkehr pauschal zu überprüfen, wird die Inhaltsanalyse gezielt für definierte Datenströme aktiviert.\\
+Die IPS-Funktionalität ist in der FortiGate VM kein globaler Dienst, sondern ein tief in die Verarbeitungslogik von Firewall-Richtlinien (Policies) integrierter Mechanismus. Diese richtlinienbasierte Architektur ist der Schlüssel zur granularen und performanten Anwendung von Sicherheitsmaßnahmen. Anstatt den gesamten Netzwerkverkehr pauschal zu überprüfen, wird die Inhaltsanalyse gezielt für definierte Datenströme aktiviert.\\
 
 Die Konfiguration erfolgt über Security Profiles (Sicherheitsprofile). Ein Security Profile ist ein Bündel von Einstellungen für die verschiedenen Sicherheitsdienste wie Antivirus, Web-Filter, Application Control und IPS. Dafür wird innerhalb eines Security Profiles ein sogenannter IPS Sensor konfiguriert. In diesem Sensor wird detailliert festgelegt, welche Angriffs-Signaturen und -Kategorien (z.B. Web-Client, Malware, Botnet) für den zu schützenden Verkehr relevant sind und welche Aktion bei einem Treffer ausgeführt werden soll (Block, Monitor, Reset, etc.).\\
 
@@ -158,7 +157,8 @@ Die Art und Weise, wie die Deep Packet Inspection (DPI) für diese Analyse durch
 
 Durch diese Kombination aus individuell konfigurierbaren IPS Sensoren und der Wahl des Inspektionsmodus pro Firewall-Regel ermöglicht die FortiGate-Architektur eine sehr flexible, kontextbezogene und ressourcenschonende Anwendung ihrer Intrusion-Prevention-Funktionen.\\
 
-Ein wesentlicher Aspekt der kommerziellen Philosophie von Fortinet ist die Absicherung der Sicherheitsplattform selbst. Als geschlossene Hardware-Appliance mit dem gehärteten, proprietären Betriebssystem FortiOS obliegt die Verantwortung für die Sicherheit des Basissystems dem Hersteller. Fortinet liefert regelmäßig Sicherheitsupdates für das Betriebssystem, um Schwachstellen zu schließen. Dies soll das Risiko einer direkten Kompromittierung der Firewall minimieren. Physische Angriffe, wie beispielsweise Evil.Maid, werden durch manipulationssichere Gehäuse und spezielle Bootloader erschwert.
+Ein wesentlicher Aspekt der kommerziellen Philosophie von Fortinet ist die Absicherung der Sicherheitsplattform selbst. Bei der hier verwendeten FortiGate VM greift dabei ein Modell der geteilten Verantwortung (Shared Responsibility). Fortinet ist für die Sicherheit des proprietären und gehärteten Betriebssystems FortiOS verantwortlich und liefert regelmäßig Sicherheitsupdates, um Schwachstellen in der virtuellen Appliance zu schließen und das Risiko einer direkten Kompromittierung der Firewall-Software zu minimieren.\\
+Die Verantwortung für die Sicherheit der darunterliegenden Infrastruktur obliegt hingegen vollständig dem Anwender. Dies schließt die Härtung des Virtualisierungs-Hosts und die sichere Konfiguration des Hypervisors mit ein. Physische Angriffe, wie beispielsweise ein Evil-Maid-Angriff, stellen nun eine Bedrohung für den Virtualisierungs-Host dar, nicht mehr für eine dedizierte Appliance mit gehärtetem Gehäuse. Die Schutzmaßnahmen verlagern sich somit vom Firewall-Produkt selbst auf den Server und dessen physischen Standort. Im Gegensatz zu einer physischen Appliance liegt die Verantwortung für die Integrität der Hardware im virtuellen Setup ausschließlich beim Betreiber der Host-Systeme.
 
 \subsection{Die Open-Source-Alternative: OPNsense}
 Die Entstehungsgeschichte von OPNsense ist eng mit der Entwicklung anderer Open-Source-Firewall-Projekte verknüpft und für das Verständnis seiner Philosophie entscheidend. Das Projekt wurde Anfang 2015 als "Fork" des damals dominanten pfSense-Projekts ins Leben gerufen. Maßgeblich vorangetrieben wurde dieser Schritt von der niederländischen Firma Deciso B.V. Die Gründe für die Abspaltung waren konkret und zielgerichtet: Zum Einen gab es Bedenken hinsichtlich der Lizenzpolitik und den Wunsch nach einer eindeutigen, liberalen 2-Klausel-BSD-Lizenz, um maximale Freiheit für private und kommerzielle Nutzer zu garantieren. Auch die Entwicklung von pfSense wurde als zunehmend geschlossen und intransparent wahrgenommen. Als Reaktion darauf setzte OPNsense von Beginn an auf eine offene Entwicklung und die aktive Beteiligung der Community. Außerdem lagen technische Gründe vor, insbesondere der Wunsch nach einer moderneren und besser strukturierten Codebasis, um die Wartbarkeit zu erhöhen und externe Beiträge zu erleichtern. Die Philosophie von OPNsense basiert seither konsequent auf diesen Gründungsprinzipien der Transparenz, Modularität und Sicherheit, gestützt auf das robuste FreeBSD-Betriebssystem. Zusätzliche Legitimität erhielt das junge Projekt, als der Gründer des ursprünglichen m0n0wall-Projekts, von dem einst pfSense abstammte, nach dessen Einstellung seiner Community den Wechsel zu OPNsense empfahl.\cite{Fork}\\\\
@@ -196,7 +196,7 @@ Das Betriebsmodell von OPNsense ist durch Offenheit und Eigenverantwortung gepr�
 Nachdem in den vorangegangenen Kapiteln die beiden für diese Arbeit ausgewählten Systeme einzeln vorgestellt wurden, dient dieser Abschnitt dazu, die gewonnenen Erkenntnisse in einem direkten Vergleich zu verdichten.\\
 Die nachfolgende Tabelle stellt die zentralen konzeptionellen, technischen und operativen Eigenschaften der beiden Lösungen synoptisch gegenüber.\\
 
-	\begin{longtable}{>{\RaggedRight}p{0.2\textwidth} >{\RaggedRight}p{0.35\textwidth} >{\RaggedRight}p{0.35\textwidth}}
+\begin{longtable}{>{\RaggedRight}p{0.2\textwidth} >{\RaggedRight}p{0.35\textwidth} >{\RaggedRight}p{0.35\textwidth}}
 	% --- KOPF- UND FUSSZEILEN-DEFINITIONEN FÜR LONGTABLE ---
 	\toprule
 	\textbf{Kriterium} & \textbf{FortiGate} & \textbf{OPNsense} \\
@@ -219,9 +219,9 @@ Die nachfolgende Tabelle stellt die zentralen konzeptionellen, technischen und o
 	% KATEGORIE I
 	\multicolumn{3}{l}{\textbf{I. Grundlegende Architektur \& Philosophie}} \\
 	\midrule
-	System-Typ & Integrierte Security-Appliance (Hardware und Software aus einer Hand) & Software-Distribution, die auf Standard-Hardware installiert wird \\
+	System-Typ & Virtuelle Security-Appliance (Software für Standard-Virtualisierungsumgebungen) & Software-Distribution, die auf Standard-Hardware installiert wird \\
 	\addlinespace
-	Grundphilosophie & Unified Threat Management (UTM): Konsolidierung vieler Sicherheitsfunktionen in einem Gerät & Modulare Plattform: Grundfunktionen sind enthalten, erweiterte Funktionen werden als Plugins hinzugefügt \\
+	Grundphilosophie & Unified Threat Management (UTM): Konsolidierung vieler Sicherheitsfunktionen in einem System & Modulare Plattform: Grundfunktionen sind enthalten, erweiterte Funktionen werden als Plugins hinzugefügt \\
 	\addlinespace
 	Entwicklungsmodell & Proprietär / Closed-Source; Entwicklung erfolgt intern durch Fortinet & Open-Source; Entwicklung wird von der Firma Deciso B.V. und einer globalen Community vorangetrieben \\
 	\addlinespace
@@ -235,7 +235,7 @@ Die nachfolgende Tabelle stellt die zentralen konzeptionellen, technischen und o
 	\midrule
 	IPS-Engine & Proprietäre, in FortiOS tief integrierte Engine & Suricata (oder optional Snort) als eigenständiger Dienst/Plugin \\
 	\addlinespace
-	Hardware-Beschleunigung & \textbf{Ja}, durch spezialisierte ASICs (Security Processing Units - SPUs) zur Auslagerung der Analyse & \textbf{Nein}, die gesamte Verarbeitungslast liegt auf der Standard-x86-CPU des Systems \\
+	Hardware-Beschleunigung & \textbf{Nein}, die gesamte Verarbeitungslast liegt auf der CPU des Virtualisierungs-Hosts & \textbf{Nein}, die gesamte Verarbeitungslast liegt auf der Standard-x86-CPU des Systems \\
 	\addlinespace
 	Inspektionsmodi & Flow-based und Proxy-based als wählbare Modi pro Firewall-Regel & Inline-Modus (vergleichbar mit Flow-based), für Proxy-Funktionalität ist ein separater Dienst nötig \\
 	\addlinespace
@@ -243,7 +243,7 @@ Die nachfolgende Tabelle stellt die zentralen konzeptionellen, technischen und o
 	\addlinespace
 	Protokoll-Unterstützung & Sehr breite, durch FortiGuard Labs definierte und gepflegte Protokolldekodierer & Breite Protokoll-Unterstützung durch Suricata, abhängig von den aktivierten Regeln \\
 	\addlinespace
-	SSL/TLS-Inspektion & Als integrierte Kernfunktion mit Hardware-Beschleunigung verfügbar & Möglich, erfordert aber die manuelle Konfiguration eines separaten Web-Proxys (z.B. Squid) \\
+	SSL/TLS-Inspektion & Als integrierte, rechenintensive Kernfunktion verfügbar; Performance ist von der Host-CPU abhängig & Möglich, erfordert aber die manuelle Konfiguration eines separaten Web-Proxys (z.B. Squid) \\
 	\addlinespace
 	Signatur-Erstellung & Erfolgt exklusiv durch das interne Sicherheitsteam der FortiGuard Labs & Erfolgt durch verschiedene Community-Projekte (z.B. Emerging Threats) und kommerzielle Anbieter \\
 	\addlinespace
@@ -271,7 +271,7 @@ Die nachfolgende Tabelle stellt die zentralen konzeptionellen, technischen und o
 	\addlinespace
 	Konfigurations-Paradigma & Richtlinien-zentriert: IPS wird als Profil auf Firewall-Regeln angewendet & Dienst-zentriert: IPS wird global auf Netzwerkschnittstellen aktiviert \\
 	\addlinespace
-	Reporting \& Logging & Umfassend und integriert, oft mit On-Board-Speicher und Anbindung an FortiAnalyzer & Funktional, aber für tiefgehende Analyse oft die Anbindung an externe Log-Systeme (z.B. Elastic Stack, früher ELK-Stack) nötig \\
+	Reporting \& Logging & Umfassend und integriert, Anbindung an FortiAnalyzer möglich & Funktional, aber für tiefgehende Analyse oft die Anbindung an externe Log-Systeme (z.B. Elastic Stack) nötig \\
 	\addlinespace
 	Update-Prozess & Vollautomatisiert für Signaturen; Firmware-Updates sind manuelle Eingriffe & Updates für das Basissystem, Plugins und Regel-Sets erfolgen getrennt und auf Initiative des Anwenders \\
 	\addlinespace
@@ -283,7 +283,7 @@ Die nachfolgende Tabelle stellt die zentralen konzeptionellen, technischen und o
 	\midrule
 	Lizenzkosten (Software) & Ja, obligatorisch für IPS-Updates und andere Sicherheitsdienste & Nein, die Software ist kostenlos \\
 	\addlinespace
-	Hardware-Kosten & Gebunden an den Kauf der FortiGate-Appliance & Abhängig von der vom Nutzer gewählten Standard-Hardware \\
+	Hardware-Kosten & Abhängig von den Ressourcen des Virtualisierungs-Hosts; keine direkten Appliance-Kosten & Abhängig von der vom Nutzer gewählten Standard-Hardware \\
 	\addlinespace
 	Wiederkehrende Kosten & Hoch, durch jährliche Subscriptions für FortiGuard-Dienste und Support & Niedrig; optional für kommerzielle Regel-Sets oder Support-Verträge \\
 	\addlinespace
@@ -295,9 +295,8 @@ Die nachfolgende Tabelle stellt die zentralen konzeptionellen, technischen und o
 	% KATEGORIE VI
 	\multicolumn{3}{l}{\textbf{VI. Performance \& Skalierbarkeit}} \\
 	\midrule
-	Leistungs-Flaschenhals & SPU-Kapazität und Speicherdurchsatz der Appliance & CPU-Leistung, RAM-Geschwindigkeit der gewählten Hardware \\
+	Leistungs-Flaschenhals & CPU-Leistung, RAM und Netzwerkanbindung des Host-Systems & CPU-Leistung, RAM-Geschwindigkeit der gewählten Hardware \\
 	\addlinespace
-	Skalierbarkeit & Vertikale Skalierung durch Kauf eines größeren Modells; horizontale Skalierung durch Clustering & Hohe Flexibilität bei der vertikalen Skalierung durch Hardware-Upgrades; Clustering ist möglich \\
+	Skalierbarkeit & Flexible vertikale Skalierung durch Zuweisung von Host-Ressourcen (vCPU, RAM); horizontale Skalierung durch Clustering & Hohe Flexibilität bei der vertikalen Skalierung durch Hardware-Upgrades; Clustering ist möglich \\
 	
 \end{longtable}
-
