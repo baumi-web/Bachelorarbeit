@@ -39,7 +39,11 @@ Dieser Test wurde ausgewählt, um zu prüfen, ob das IPS in der Lage ist, einen 
 \end{itemize}
 
 \subsection{Exploits (Ausnutzung von Schwachstellen)}
-In dieser Kategorie wird die Kernkompetenz eines IPS geprüft: die Erkennung und Blockade von konkreten Exploits, die bekannte Software-Schwachstellen ausnutzen, um unautorisierten Zugriff oder Kontrolle über ein System zu erlangen.
+In dieser Kategorie wird die Kernkompetenz eines IPS geprüft: die Erkennung und Blockade von konkreten Exploits, die bekannte Software-Schwachstellen ausnutzen, um unautorisierten Zugriff oder Kontrolle über ein System zu erlangen.\\
+
+\textbf{EternalBlue (MS17-010)}\\
+Mithilfe des Metasploit-Frameworks wird versucht, die bekannte Schwachstelle im SMB-Protokoll von Windows-Systemen auszunutzen. Dieser Exploit ermöglicht die Ausführung von beliebigem Code auf einem ungepatchten System.
+Dieser Test ist essenziell, da es sich um einen der wirkungsvollsten Exploits der letzten Jahre handelt. Es wird geprüft, ob das IPS die charakteristische Signatur des Angriffsverkehrs im SMB-Protokoll zuverlässig erkennt. Dabei ist nur von Bedeutung, ob das IPS den Exploit erkennt und nicht ob der EternalBlue Exploit schaden am System anrichten kann.
 
 
 \section{Durchführen der Tests}
