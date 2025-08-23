@@ -8,7 +8,7 @@ In dieser Kategorie wird die Fähigkeit der IPS-Systeme getestet, verschiedene M
 
 \begin{itemize}
 	\item \textbf{TCP-SYN-Scan (nmap -sS)}\\
-	Der Parameter -sS steht für ''SYN-Scan'' / ''Stealth-Scan''. Anstatt einen vollständigen TCP-Handshake (SYN -> SYN/ACK -> ACK) durchzuführen, sendet Nmap nur das initiale SYN-Paket. Antwortet der Zielport mit einem SYN/ACK, gilt er als offen. Antwortet er jedoch mit einem RST, ist der Port geschlossen. Der Angreifer bricht den Handshake nach dem SYN/ACK durch Senden eines RST-Pakets ab und hinterlässt so weniger Spuren in den Anwendungslogs des Zielsystems.\\
+	Der Parameter -sS steht für ''SYN-Scan/Stealth-Scan''. Anstatt einen vollständigen TCP-Handshake (SYN - SYN/ACK - ACK) durchzuführen, sendet Nmap nur das initiale SYN-Paket. Antwortet der Zielport mit einem SYN/ACK, gilt er als offen. Antwortet er jedoch mit einem RST, ist der Port geschlossen. Der Angreifer bricht den Handshake nach dem SYN/ACK durch Senden eines RST-Pakets ab und hinterlässt so weniger Spuren in den Anwendungslogs des Zielsystems.\\
 	Dieser Scan wurde ausgewählt, da er die Standardmethode für schnelle und effiziente Portscans ist. Das Ziel ist es zu prüfen, ob das IPS diese weitverbreitete Technik anhand der hohen Anzahl von Verbindungsversuchen von einer Quelle zu vielen verschiedenen Ports erkennt und als bösartige Aufklärungsaktivität einstuft\\
 	
 	\item \textbf{Xmas-Scan (nmap -sX)}\\
