@@ -252,6 +252,12 @@ Fortinet Inc.\\
 Abgerufen am: 01.08.2025
 
 
+\bibitem{ProxmoxVE}
+Proxmox Server Solutions GmbH\\
+\emph{Proxmox VE Administration Guide} \\
+\url{https://pve.proxmox.com/pve-docs/}\\
+Abgerufen am: 22.08.2025
+
 \bibitem{Fortivm}
 Fortinet Inc.\\
 \emph{How to install FortiGate VM on Proxmox} \\
@@ -310,6 +316,86 @@ https://my.idc.com/getdoc.jsp?containerId=prUS53243925
 	\caption{Zuweisung der Hardwareressourcen für Windows11-VM}
 	\label{fig:win11-hardware} % <-- SCHRITT 1: Marker setzen
 \end{figure}
+
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=0.8\textwidth]{fortivm-hardware.png}
+	\caption{Konfiguration der FortiGate VM}
+	\label{fig:fortivm-hardware} % <-- SCHRITT 1: Marker setzen
+\end{figure}
+
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=0.8\textwidth]{fortivm-portconfig-init.png}
+	\caption{Init-Konfiguration der Interfaces und DHCP}
+	\label{fig:fortivm-config-init} % <-- SCHRITT 1: Marker setzen
+\end{figure}
+
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=0.8\textwidth]{forti-WANroute.png}
+	\caption{Static Route zum WAN}
+	\label{fig:forti-WANroute} % <-- SCHRITT 1: Marker setzen
+\end{figure}
+
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=0.8\textwidth]{forti-LAN-addr.png}
+	\caption{Adressobjekt für das LAN-Subnetz}
+	\label{fig:forti-LAN-addr} % <-- SCHRITT 1: Marker setzen
+\end{figure}
+
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=0.8\textwidth]{forti-Kali-addr.png}
+	\caption{Adressobjekt für das Kali-Subnetz}
+	\label{fig:forti-Kali-addr} % <-- SCHRITT 1: Marker setzen
+\end{figure}
+
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=0.8\textwidth]{forti-LAN-WAN-Policy01.png}
+	\caption{FortiGate VM Policy LAN\_to\_WAN}
+	\label{fig:forti-LAN-WAN-P01} % <-- SCHRITT 1: Marker setzen
+\end{figure}
+
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=0.8\textwidth]{forti-Kali-LAN-Policy01.png}
+	\caption{FortiGate VM Policy KALI\_to\_LAN}
+	\label{fig:forti-Kali-LAN-P01} % <-- SCHRITT 1: Marker setzen
+\end{figure}
+
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=0.8\textwidth]{forti-IPS-sensor.png}
+	\caption{FortiGate VM Custom IPS Sensor}
+	\label{fig:forti-IPS-sensor} % <-- SCHRITT 1: Marker setzen
+\end{figure}
+
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=0.8\textwidth]{forti-SSL.png}
+	\caption{FortiGate VM Custom SSL Inspection Profile}
+	\label{fig:forti-SSL} % <-- SCHRITT 1: Marker setzen
+\end{figure}
+
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=0.8\textwidth]{forti-Policies02.png}
+	\caption{FortiGate VM finale Policies}
+	\label{fig:forti-Policies02} % <-- SCHRITT 1: Marker setzen
+\end{figure}
+
+
+
+
+
+
+
+
+
+
 
 \begin{figure}[htbp]
 	\centering

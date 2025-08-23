@@ -22,21 +22,25 @@
 \contentsline {subsection}{\numberline {3.1.1}Test-Hardware}{31}{}%
 \contentsline {subsection}{\numberline {3.1.2}Virtualisierungssoftware}{33}{}%
 \contentsline {subsection}{\numberline {3.1.3}Virtuelle Maschinen (VMs)}{34}{}%
-\contentsline {section}{\numberline {3.2}Logische Netzwerkarchitektur}{35}{}%
-\contentsline {section}{\numberline {3.3}Grundkonfiguration der IPS-Systeme}{36}{}%
-\contentsline {subsection}{\numberline {3.3.1}Konfiguration der FortiGate 70F}{36}{}%
-\contentsline {subsection}{\numberline {3.3.2}Konfiguration von OPNsense}{36}{}%
-\contentsline {chapter}{\numberline {4}Testing}{40}{}%
-\contentsline {section}{\numberline {4.1}Definition der Testfälle}{40}{}%
-\contentsline {subsection}{\numberline {4.1.1}Netzwerk-Scans (Reconnaissance)}{40}{}%
-\contentsline {subsection}{\numberline {4.1.2}Denial-of-Service (DoS)-Angriffe}{42}{}%
-\contentsline {subsection}{\numberline {4.1.3}Exploits (Ausnutzung von Schwachstellen)}{42}{}%
-\contentsline {section}{\numberline {4.2}Durchführen der Tests}{43}{}%
-\contentsline {chapter}{\numberline {5}Auswertung}{44}{}%
-\contentsline {section}{\numberline {5.1}Analyse der Testergebnisse}{44}{}%
-\contentsline {section}{\numberline {5.2}Vergleich der IPS-Systeme}{44}{}%
-\contentsline {chapter}{\numberline {6}Fazit und Ausblick}{45}{}%
-\contentsline {chapter}{\numberline {7}Abkürzungsverzeichnis}{46}{}%
-\contentsline {chapter}{\numberline {8}Selbstständigkeitserklärung}{47}{}%
-\contentsline {chapter}{\numberline {9}Abbildungsverzeichnis}{51}{}%
+\contentsline {section}{\numberline {3.2}Netzwerkarchitektur}{35}{}%
+\contentsline {subsection}{\numberline {3.2.1}Netzwerkarchitektur Testumgebung OPNsense}{35}{}%
+\contentsline {subsection}{\numberline {3.2.2}Netzwerkarchitektur Testumgebung FortiGate VM}{36}{}%
+\contentsline {section}{\numberline {3.3}Konfiguration der Firewalls und IPS-Systeme}{36}{}%
+\contentsline {subsection}{\numberline {3.3.1}Konfiguration der FortiGate VM}{36}{}%
+\contentsline {subsection}{\numberline {3.3.2}Konfiguration von OPNsense}{39}{}%
+\contentsline {chapter}{\numberline {4}Testing}{43}{}%
+\contentsline {section}{\numberline {4.1}Definition der Testfälle}{43}{}%
+\contentsline {subsection}{\numberline {4.1.1}Netzwerk-Scans (Reconnaissance)}{43}{}%
+\contentsline {subsection}{\numberline {4.1.2}Denial-of-Service (DoS)-Angriffe}{45}{}%
+\contentsline {subsection}{\numberline {4.1.3}Exploits (Ausnutzung von Schwachstellen)}{45}{}%
+\contentsline {subsection}{\numberline {4.1.4}Passwortangriffe (Brute-Force)}{46}{}%
+\contentsline {subsection}{\numberline {4.1.5}Malware-Erkennung}{47}{}%
+\contentsline {section}{\numberline {4.2}Durchführen der Tests}{47}{}%
+\contentsline {chapter}{\numberline {5}Auswertung}{48}{}%
+\contentsline {section}{\numberline {5.1}Analyse der Testergebnisse}{48}{}%
+\contentsline {section}{\numberline {5.2}Vergleich der IPS-Systeme}{48}{}%
+\contentsline {chapter}{\numberline {6}Fazit und Ausblick}{49}{}%
+\contentsline {chapter}{\numberline {7}Abkürzungsverzeichnis}{50}{}%
+\contentsline {chapter}{\numberline {8}Selbstständigkeitserklärung}{51}{}%
+\contentsline {chapter}{\numberline {9}Abbildungsverzeichnis}{55}{}%
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 

@@ -40,10 +40,35 @@ Dieser Test wurde ausgewählt, um zu prüfen, ob das IPS in der Lage ist, einen 
 
 \subsection{Exploits (Ausnutzung von Schwachstellen)}
 In dieser Kategorie wird die Kernkompetenz eines IPS geprüft: die Erkennung und Blockade von konkreten Exploits, die bekannte Software-Schwachstellen ausnutzen, um unautorisierten Zugriff oder Kontrolle über ein System zu erlangen.\\
-
-\textbf{EternalBlue (MS17-010)}\\
+\begin{itemize}
+\item \textbf{EternalBlue (MS17-010)}\\
 Mithilfe des Metasploit-Frameworks wird versucht, die bekannte Schwachstelle im SMB-Protokoll von Windows-Systemen auszunutzen. Dieser Exploit ermöglicht die Ausführung von beliebigem Code auf einem ungepatchten System.
-Dieser Test ist essenziell, da es sich um einen der wirkungsvollsten Exploits der letzten Jahre handelt. Es wird geprüft, ob das IPS die charakteristische Signatur des Angriffsverkehrs im SMB-Protokoll zuverlässig erkennt. Dabei ist nur von Bedeutung, ob das IPS den Exploit erkennt und nicht ob der EternalBlue Exploit schaden am System anrichten kann.
+Dieser Test ist essenziell, da es sich um einen der wirkungsvollsten Exploits der letzten Jahre handelt. Es wird geprüft, ob das IPS die charakteristische Signatur des Angriffsverkehrs im SMB-Protokoll zuverlässig erkennt. Dabei ist nur von Bedeutung, ob das IPS den Exploit erkennt und nicht ob EternalBlue Schaden am System anrichten kann.\\
 
+\item \textbf{Shellshock (CVE-2014-6271)}\\
+Shellshock, offiziell als CVE-2014-6271 bekannt, ist eine kritische Sicherheitslücke in der weitverbreiteten Unix-Shell ''Bash''. Die Schwachstelle erlaubt es einem Angreifer, beliebige Befehle auf einem Zielsystem auszuführen, indem eine speziell präparierte Zeichenkette an eine Anwendung gesendet wird, die im Hintergrund auf die Bash-Shell zurückgreift. Der häufigste Angriffsvektor hierfür sind Webserver.
 
+Dieser Exploit wurde als Testfall ausgewählt, da er ein klassisches Beispiel für einen hochkritischen Angriff auf der Anwendungsebene darstellt, der über den Standard-HTTP-Port läuft und für simple Paketfilter unsichtbar ist. Der Angriff besitzt eine sehr eindeutige und bekannte Signatur\verb| (() { :; };)|, was ihn zu einem idealen Kandidaten macht, um die Effektivität der signaturbasierten Erkennung eines IPS zu überprüfen.\\
+
+\item \textbf{SQL-Injection (sqlmap)}\\
+Mit dem Tool sqlmap wird automatisiert versucht, über Parameter einer Webanwendung bösartige SQL-Befehle an die dahinterliegende Datenbank zu senden. Dies bildet ebenfalls einen großen Angriffsvektor\\
+Ziel ist die Überprüfung der Fähigkeit des IPS, diese gängige Web-Angriffstechnik anhand von typischen SQL-Schlüsselwörter und der speziellen/untypischen Syntax im HTTP-Anwendungsverkehr zu erkennen.
+\end{itemize}
+
+\subsection{Passwortangriffe (Brute-Force)}
+\begin{itemize}
+\item \textbf{Hydra SSH Brute-Force}\\
+Dieser Testfall simuliert einen Brute-Force-Angriff auf den SSH-Dienst eines Servers mithilfe des Tools Hydra. Solche Angriffe, bei denen automatisiert eine große Anzahl von Passwörtern ausprobiert wird, gehören zu den häufigsten Bedrohungen für öffentlich erreichbare Dienste und stellen eine grundlegende Anforderung an moderne Schutzsysteme dar.\\
+Dieser Test wurde ausgewählt, um nicht nur die reine Detektion, sondern vor allem die Qualität und Präzision der Erkennung durch das IPS zu bewerten. Das Ziel ist es zu überprüfen, ob das System die hohe Frequenz an fehlgeschlagenen Anmeldeversuchen von einer einzigen Quelle korrekt als kritischen Brute-Force-Angriff klassifiziert. 
+\end{itemize}
+
+\subsection{Malware-Erkennung}
+
+Dieser Testfall überprüft die grundlegende Fähigkeit der Systeme, bekannte und eindeutige Malware-Muster im Netzwerkverkehr zu identifizieren.
+\begin{itemize}
+	\item \textbf{EICAR Testvirus}\\
+	Der EICAR-Testfile (European Institute for Computer Antivirus Research) ist kein echter Virus, sondern eine standardisierte, harmlose Zeichenfolge. Sie wurde als sicherer Test für die Funktionalität von Malware-Scannern entwickelt.\\
+	Es wird ausschließlich die Fähigkeit des Systems geprüft, eine bekannte, bösartige Signatur innerhalb eines Datenstroms zu erkennen und darauf zu reagieren. Die ungefährliche Natur der Datei gewährleistet dabei eine sichere und exakt reproduzierbare Testdurchführung, was eine Grundvoraussetzung für einen objektiven Vergleich ist.\\
+	Ziel des Tests ist es zu verifizieren, ob das IPS eine Deep Packet Inspection des Datenstroms durchführt, die bekannte EICAR-Signatur innerhalb der Nutzlast erkennt und und daraufhin die konfigurierte Aktion, beispielsweise das Verwerfen des Pakets (drop), korrekt ausführt.
+\end{itemize}
 \section{Durchführen der Tests}
