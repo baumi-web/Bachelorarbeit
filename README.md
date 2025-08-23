@@ -6,16 +6,16 @@ Vergleich eines kommerziellen Intrusion-Prevention Systems und einer Open-Source
 
 ## To-Do Liste ✅
 
-- [x] Theoretische Grundlagen 
-- [x] Aufbau Testumgebung OPNsense 
-- [x] Durchführen Tests mit OPNsense
-- [x] Aufbau Testumgebung FortiGate VM 
-- [ ] Durchführen Tests mit FortiGate VM
-- [ ] Beschreiben der Testfälle
-- [ ] Auswertung der Testfälle unter OPNsense
-- [ ] Auswertung der Testfälle unter FortiGate VM
-- [ ] Vergleich der IPS Systeme (auf alle Merkmale -> IPS, Konfiguration, Administration/ Benutzerfreundlichkeit, Reporting-Funnktion)
-- [ ] Fazit und Ausblick
+- ✅ Theoretische Grundlagen 
+- ✅ Aufbau Testumgebung OPNsense 
+- ✅ Durchführen Tests mit OPNsense
+- ✅ Aufbau Testumgebung FortiGate VM 
+- - [ ] Durchführen Tests mit FortiGate VM
+- ✅ Beschreiben der Testfälle
+- - [ ] Auswertung der Testfälle unter OPNsense
+- - [ ] Auswertung der Testfälle unter FortiGate VM
+- - [ ] Vergleich der IPS Systeme (auf alle Merkmale -> IPS, Konfiguration, Administration/ Benutzerfreundlichkeit, Reporting-Funnktion)
+- - [ ] Fazit und Ausblick
 
 
 
